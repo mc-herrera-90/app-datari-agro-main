@@ -1,11 +1,12 @@
 <template>
 	<div id="infoCardTreeMap">
-        <h4 class="gray-font-title" style="padding: 0; margin:0; border: 1px solid red">
+        <h4 class="gray-font-title" style="padding: 0; margin:0;">
           {{title}}
         </h4>
         <TreeMap
           :data="data_chart"
-          :height="'180vw'"
+          :height="'100%'"
+          :width="'100%'"
         />
 	</div>
 </template>
@@ -115,7 +116,6 @@ export default {
 #infoCardTreeMap {
   padding: 0 !important;
   margin: 0 !important;
-  border: 1px solid red;
 }
 .gray-font-title{
   padding: 0;

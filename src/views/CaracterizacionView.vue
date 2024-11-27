@@ -33,8 +33,8 @@
       </v-app-bar>
 
     </div>
-    <div id="region1" class="mt-2 d-flex">
-        <v-col cols=6 class="d-flex flex-column" style="padding: 0; gap: 6px; margin-right: 5px">
+    <div id="wrapper" class="mt-2">
+        <div id="wrapper-left">
           <div class="d-flex" id="top-panel">
               <v-card class="d-flex flex-column" style="justify-content: space-around; align-items: center; width: 100%">
                 <h4 class="gray-font">Productores Participantes</h4>
@@ -43,15 +43,15 @@
                 />
               </v-card>
               <v-card class="d-flex flex-column text-center" style="justify-content: space-between; width: 40%;">
-                <p class="gray-font-title">Tipo Empresa</p>
-                <p class="gray-font-subtitle">Persona Jurídica</p>
+                <h4 class="gray-font">Tipo Empresa</h4>
+                <p class="gray-font">Persona Jurídica</p>
                 <p class="number">1</p>
-                <p class="gray-font-subtitle">Persona Natural</p>
+                <p class="gray-font">Persona Natural</p>
                 <p class="number">6</p>
               </v-card>
-            <div class="d-flex flex-column" style="gap: 10px; justify-content: space-between; width: 100%">
+            <div class="d-flex flex-column" style="gap: 5px; width: 100%">
                   <v-card class="text-center">
-                    <h3 class="gray-font">Microempresas</h3>
+                    <h4 class="gray-font">Microempresas</h4>
                     <p class="gray-font-subtitle">0 - 2400 UF</p>
                     <p class="number">100%</p>
                   </v-card>
@@ -98,26 +98,21 @@
                     />
                   </v-card>
             </div>
-        </v-col>
+          </div>
+        <div id="wrapper-right">
         <v-card class="py-5" id="card-map">
                 <mapa_regiones
                 :data_regiones="data_regiones"
                 :data_comunas="data_comunas"
                 />
           </v-card>
+          </div>
       </div>
     </div>
 </template>
 
 
-<style type="text/css">
-.boton_cerrar_mapa{
-  justify-content:center;
-  align-items:center;
-  margin-left:0%;
-  margin-top:20px;
-}
-</style>
+
 
 <script>
 import DonutChart from '../components/charts/DonutChart.vue';
@@ -341,28 +336,43 @@ export default {
 #CaracterizacionView {
   /* border: 2px solid red; */
   height: 100%;
-  border: 1px solid red;
 }
 
+#wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 3px;
+}
 
+#wrapper-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+}
+#wrapper-right {
+  width: 100%;
+  border-radius: 3px;
+}
 
 #top-panel {
   justify-content: space-between;
   gap: 5px;
-  height: 100%;
-  overflow: hidden;
+  height: auto;
 }
 
 #middle-panel {
   height: auto;
-
 }
+
 #bottom-panel {
   display: flex;
-  height: 100%;
+  height: auto;
+  width: 100%;
   gap: 5px;
-
 }
+
 .v-btn.white--text {
   background-color: white;
   color: black !important;
@@ -384,16 +394,17 @@ h4.gray-font {
   padding: 0;
   margin: 0;
 }
-.gray-font-subtitle{
+p.gray-font{
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: .63vw;
   font-weight: normal;
+  line-height: normal;
 }
 /* MAPA */
 #card-map {
   height: 100%;
+  margin: auto;
   width: 100%;
 }
 

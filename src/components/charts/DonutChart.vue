@@ -1,7 +1,7 @@
 <template>
-	<div class="d-flex flex-column" style="align-items: center;">
+	<div id="wrapper">
         <apexchart type="donut" ref="chart"
-          :width="'70%'"
+          :width="'100%'"
           :options="chartOptions" 
           :series="series" 
           class="chart-wrapper" id="donut-participantes">
@@ -35,7 +35,6 @@ export default {
         plotOptions: {
           pie: {
             donut: {
-              size: '60%',
               labels: {
                 show: false, // Oculta cualquier etiqueta dentro del gráfico de Donut
                 name: {
@@ -78,36 +77,31 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
-
-.legend-item {
+#wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 85%;
 }
+
 
 .legend-wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
 }
 .legend-wrapper span {
-  font-size: .7vw;
+  font-size: .8vw;
 }
 
 .legend-color {
-  width: 1vw;
-  height: 1vw;
+  width: .8vw;
+  height: .8vw;
   display: inline-block;
-}
-
-.legend-label {
-  margin: .2vw;
-  color: #7F7F7F;
-}
-
-.legend-value {
-  font-size: 16px;
-  font-weight: bold;
-  color: #103E8E;
+  margin: 0 1px;
 }
 
 
