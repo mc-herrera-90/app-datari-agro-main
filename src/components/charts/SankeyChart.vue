@@ -3,6 +3,7 @@
     <v-col
       id="svg-sankey"
       ref="sankeyContainer"
+      class="padre"
     ></v-col>
     <!-- Tooltip -->
     <div id="tooltip" class="tooltip" ref="tooltip" style="opacity: 0;"></div>
@@ -77,23 +78,24 @@
         'Residuos Orgánicos': '#7f7f7f',
       };
   
+      const container = this.$refs.sankeyContainer;
+      const width = container.getBoundingClientRect().width;
+      const height = container.getBoundingClientRect().height;
+      (height);
+
       const sankeyGenerator = sankey()
         .nodeId(d => d.id)
         .nodeWidth(20)
         .nodePadding(10)
-        .extent([[1, 1], [window.innerWidth - 1, window.innerHeight * 0.7 - 5]]); // Usar dimensiones del viewport
-        // .extent([[1, 1], [1100 - 1, 640 - 5]]);
+        .extent([[1, 1], [width - 1, height - 1]]);
       const { nodes, links } = sankeyGenerator(data);
   
-      const container = this.$refs.sankeyContainer;
-      const width = container.getBoundingClientRect().width;
-      const height = container.getBoundingClientRect().height;
     
       
       const svg = d3.select(this.$refs.sankeyContainer)
         .append('svg')
-        .attr('width', window.innerWidth)
-        .attr('height', window.innerHeight * 0.7);
+        .attr('width', '100vw')
+        .attr('height', '75vh');
 
       const tooltip = d3.select(this.$refs.tooltip);
     // Dibujar los nodos con color asignado
@@ -161,10 +163,13 @@
   
   <style scoped>
   #container-graph {
-    border: 1px solid red;
-    /* overflow: hidden; */
-    height: 75vh;
+    overflow: hidden;
     width: 100%;
+    height: 75vh;
+  }
+  .padre {
+    height: 90%;
+    width: 90%;
   }
 
 .tooltip {

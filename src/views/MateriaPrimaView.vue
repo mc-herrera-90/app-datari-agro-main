@@ -36,7 +36,7 @@
       <div class="mt-2">
         <v-row>
             <v-col cols=3>
-                <v-card>
+                <v-card class="card-left">
                   <v-card-subtitle>
                     <p class="gray-font-title"> 
                       Materias primas y
@@ -103,7 +103,7 @@
               </v-card>
             </v-col>
         </v-row>
-      </div>
+        </div>
       </div>
 </template>
   
@@ -154,7 +154,6 @@
   
   <style scoped>
 #MateriaprimaView {
-  border: 1px solid red;
 }
 
   .gray-font-title{
@@ -212,8 +211,7 @@
   margin-right: 60px;
   text-align: right;
 }
-
-#card-graph{
-  border: 1px solid red;
+.card-left{
+  height: 100%;
 }
   </style>
