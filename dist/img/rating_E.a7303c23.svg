@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1280 1024">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 34.89px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-4, .cls-3 {
+        fill: #231f20;
+      }
+
+      .cls-5 {
+        fill: #fbed1f;
+      }
+
+      .cls-6 {
+        stroke: #c12126;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-13 {
+        fill: #00a64e;
+      }
+
+      .cls-14 {
+        fill: #00753c;
+      }
+
+      .cls-7 {
+        stroke: #00753c;
+      }
+
+      .cls-15 {
+        fill: #ee3e41;
+      }
+
+      .cls-8 {
+        stroke: #00a64e;
+      }
+
+      .cls-16 {
+        fill: #0da54b;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-17 {
+        fill: #f69547;
+      }
+
+      .cls-9 {
+        stroke: #ee3e41;
+      }
+
+      .cls-4 {
+        font-family: ArialMT, Arial;
+      }
+
+      .cls-4, .cls-3 {
+        font-size: 23.26px;
+      }
+
+      .cls-10 {
+        stroke: #fbed1f;
+      }
+
+      .cls-18 {
+        fill: #c12126;
+      }
+
+      .cls-11 {
+        stroke: #f69547;
+      }
+
+      .cls-19 {
+        fill: #93c854;
+      }
+
+      .cls-12 {
+        stroke: #93c854;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="Layer_1">
+      <rect class="cls-7" x="326" y="328.69" width="605.77" height="43.77"/>
+      <rect class="cls-14" x="326" y="328.69" width="211.15" height="43.77"/>
+      <rect class="cls-16" x="326" y="379.37" width="225.52" height="43.77"/>
+      <rect class="cls-19" x="326" y="430.05" width="244.59" height="43.77"/>
+      <rect class="cls-5" x="326" y="480.74" width="259.41" height="43.77"/>
+      <rect class="cls-17" x="326" y="531.42" width="274.32" height="43.77"/>
+      <rect class="cls-18" x="326" y="632.79" width="302.89" height="43.77"/>
+      <rect class="cls-15" x="326" y="582.1" width="287.34" height="43.77"/>
+      <rect class="cls-6" x="326" y="632.79" width="605.77" height="43.77"/>
+      <rect class="cls-9" x="326" y="582.1" width="605.77" height="43.77"/>
+      <rect class="cls-11" x="326" y="531.42" width="605.77" height="43.77"/>
+      <rect class="cls-10" x="326" y="480.74" width="605.77" height="43.77"/>
+      <rect class="cls-12" x="326" y="430.05" width="605.77" height="43.77"/>
+      <rect class="cls-8" x="326" y="379.37" width="605.77" height="43.77"/>
+      <text class="cls-3" transform="translate(727 357.64) scale(1.09 1)"><tspan x="0" y="0">86% - 100%</tspan></text>
+      <text class="cls-3" transform="translate(724.88 408.88) scale(1.09 1)"><tspan x="0" y="0">72% - 85%</tspan></text>
+      <text class="cls-3" transform="translate(725.92 460.8) scale(1.09 1)"><tspan x="0" y="0">58% - 71%</tspan></text>
+      <text class="cls-3" transform="translate(726.95 510.69) scale(1.09 1)"><tspan x="0" y="0">43% - 57%</tspan></text>
+      <text class="cls-3" transform="translate(724.88 560.43) scale(1.09 1)"><tspan x="0" y="0">29% - 42%</tspan></text>
+      <text class="cls-3" transform="translate(726.95 610.85) scale(1.09 1)"><tspan x="0" y="0">14% - 28%</tspan></text>
+      <text class="cls-3" transform="translate(731.16 663.31) scale(1.09 1)"><tspan x="0" y="0" xml:space="preserve"> 0% - 13%</tspan></text>
+      <rect class="cls-7" x="326" y="289" width="211.15" height="32.78"/>
+      <rect class="cls-6" x="326" y="683.47" width="302.89" height="33.53"/>
+      <text class="cls-4" transform="translate(342.82 708.97) scale(1.09 1)"><tspan x="0" y="0">Menos BPSA</tspan></text>
+      <text class="cls-4" transform="translate(343.63 313.59) scale(1.09 1)"><tspan x="0" y="0">Más BPSA</tspan></text>
+      <polygon class="cls-18" points="645.72 655 628.34 677 628.34 633 645.72 655"/>
+      <polygon class="cls-15" points="630.72 604 613.34 626 613.34 582 630.72 604"/>
+      <polygon class="cls-17" points="617.42 553 600.04 575 600.04 531 617.42 553"/>
+      <polygon class="cls-5" points="602.38 502.5 585 525 585 480 602.38 502.5"/>
+      <polygon class="cls-19" points="587.38 452 570 474 570 430 587.38 452"/>
+      <polygon class="cls-13" points="568.9 401 551 423 551 379 568.9 401"/>
+      <polygon class="cls-14" points="554.38 351 537 373 537 329 554.38 351"/>
+      <text class="cls-1" transform="translate(503.18 363.14) scale(1.09 1)"><tspan x="0" y="0">A</tspan></text>
+      <text class="cls-1" transform="translate(517.45 414.65) scale(1.09 1)"><tspan x="0" y="0">B</tspan></text>
+      <text class="cls-1" transform="translate(535.63 463.01) scale(1.09 1)"><tspan x="0" y="0">C</tspan></text>
+      <text class="cls-1" transform="translate(554.49 515.65) scale(1.09 1)"><tspan x="0" y="0">D</tspan></text>
+      <text class="cls-1" transform="translate(568.23 565.35) scale(1.09 1)"><tspan x="0" y="0">E</tspan></text>
+      <text class="cls-1" transform="translate(581.7 616.04) scale(1.09 1)"><tspan x="0" y="0">F</tspan></text>
+      <text class="cls-1" transform="translate(591.18 666.72) scale(1.09 1)"><tspan x="0" y="0">G</tspan></text>
+      <rect x="955.05" y="529.77" width="52.95" height="47.07"/>
+      <polygon points="937.67 553.31 955.05 529.77 955.05 576.84 937.67 553.31"/>
+      <text class="cls-2" transform="translate(968.8 565.08) scale(1.09 1)"><tspan x="0" y="0">E</tspan></text>
+    </g>
+  </g>
+</svg>

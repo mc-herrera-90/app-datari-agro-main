@@ -83,7 +83,7 @@
               </v-card>
             </v-col>
           </v-row>
-                
+
           <v-row id="region1-row-3">
             <v-col cols=12>
               <v-row>
@@ -401,6 +401,7 @@ export default {
   border: 2px solid #2F48A3;
   width: 100%;
   margin: 0 auto;
+  
 }
 
 #region1-row-1 {
@@ -435,7 +436,7 @@ export default {
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 1.24vw;
+  font-size: 1.2vw;
   font-weight: bold;
 }
 .gray-font-subtitle{

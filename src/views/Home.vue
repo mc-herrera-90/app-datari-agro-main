@@ -121,6 +121,7 @@ export default {
 </script>
 
 <style scoped>
+
 .v-btn.white--text {
   background-color: white;
   color: black !important;

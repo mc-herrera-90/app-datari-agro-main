@@ -34,31 +34,18 @@
       </v-app-bar>
 
     </div>
-      <div class="mt-4">
-        <v-row>
-          <v-col cols=12>
-            <v-card flat class="rounded" style="height: 80vh;" > 
-              <v-col>
+        <v-card class="px-3 py-3 mt-3" id="body-raiting">
                 <p class="gray-font-title">Rating</p>
                 <p class="gray-font-subtitle">Productores</p>
                 <span class="gray-font-text">Buenas Prácticas Sostenibilidad Agrícola</span>
                 <div class="text-center">
-
-                  <v-img
-                  class="mx-auto img"
-                  src="../media/rating_E.svg"
-                  >
-                </v-img>
+                  <div class="image-container">
+                  </div>
                 <p class="gray-font-text-italic">
                   BPSA: Buenas Prácticas Sostenibilidad Agrícola
                 </p>
               </div>
-              </v-col> 
-            </v-card>
-          </v-col>
-        </v-row>
-        
-      </div>
+          </v-card>
     </div>
   </template>
   
@@ -90,25 +77,41 @@
   </script>
   
   <style scoped>
+
+  #RatingView {
+    height: 36vw;
+    overflow: hidden;
+  }
+
+  #body-raiting {
+    height: 100%;
+  }
   .v-btn.white--text {
     background-color: white;
     color: black !important;
   }
+  .image-container {
+    height: 19vw;
+    background-image: url('../media/raiting_E-adjust.png');
+    background-position: center;
+    background-size: contain;
+  }
   .img {
-    height: 550px;
+    height: 100%;
+    width: 60%;
   }
   .gray-font-title{
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 36px;
+  font-size: 1.8vw;
   font-weight: bold;
 }
 .gray-font-subtitle{
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 26px;
+  font-size: 1.5vw;
   font-weight: normal;
 }
 .gray-font-text{
@@ -117,10 +120,6 @@
   color: #7F7F7F;
   font-size: 20px;
   font-weight: normal;
-}
-
-.imagen-div{
-  display: flex;
 }
 
 .gray-font-text-italic{

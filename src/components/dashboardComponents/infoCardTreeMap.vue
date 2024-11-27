@@ -10,7 +10,7 @@
         <TreeMap 
           style="margin-top:-30px;"
           :data="data_chart"
-          :height="height_chart"
+          :height="'100vw'"
           :width="'100%'" 
         />
       </v-card-text>

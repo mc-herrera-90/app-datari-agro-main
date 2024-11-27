@@ -24,7 +24,7 @@ export default {
 .number{
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 1vw;
   font-weight: bold;
   color: #2F48A3;
 }
@@ -32,14 +32,14 @@ export default {
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 16px;
+  font-size: .8vw;
   font-weight: bold;
 }
 .gray-font-subtitle{
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 16px;
+  font-size: .9vw;
   font-weight: normal;
 }
 </style>

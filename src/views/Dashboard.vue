@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="dash">
     <v-app-bar app dark elevation="0" clipped-left color="blue darken-4">
       <v-app-bar-nav-icon @click.stop="menulateral = !menulateral"></v-app-bar-nav-icon>
       <v-toolbar-title>
@@ -151,6 +151,10 @@ export default {
 </script>
 
 <style scoped>
+#dash {
+  max-height: 98vh;
+  overflow: hidden;
+}
 .v-list-item {
   flex: 0;
 }
