@@ -34,24 +34,24 @@
 
     </div>
     <div id="region1" class="mt-2">
-      <v-row id="region1-row">
-        <v-col cols=6 class="d-flex flex-column" style="gap: 6px">
+      <div id="region1-row">
+        <v-col cols=6 class="d-flex flex-column" style="padding: 0; gap: 6px; margin-right: 5px">
           <div class="d-flex" id="top-panel">
-              <v-card class="py-1" id="card-participantes">
+              <v-card class="d-flex flex-column" style="justify-content: space-around; align-items: center; width: 100%">
                 <h4 class="gray-font-title">Productores Participantes</h4>
                 <DonutChart 
-                :width="'60%'"
+                :width="'50%'"
                 :data_chart="{ serie: chartSeries, categories: chartOptions.labels, colors: ['#103E8E', '#5390EA'] }" 
                 />
               </v-card>
-              <v-card class="d-flex flex-column text-center" style="justify-content: space-between">
+              <v-card class="d-flex flex-column text-center" style="justify-content: space-between; width: 35%;">
                 <p class="gray-font-title">Tipo Empresa</p>
                 <p class="gray-font-subtitle">Persona Jurídica</p>
                 <p class="number">1</p>
                 <p class="gray-font-subtitle">Persona Natural</p>
                 <p class="number">6</p>
               </v-card>
-            <div class="d-flex flex-column" style="gap: 10px; justify-content: space-between;">
+            <div class="d-flex flex-column" style="gap: 10px; justify-content: space-between; width: 100%">
                   <v-card class="text-center">
                     <p class="gray-font-title">Microempresas</p>
                     <p class="gray-font-subtitle">0 - 2400 UF</p>
@@ -99,9 +99,9 @@
                     :data3="'6,67%'"
                     />
                   </v-card>
-                </div>
+            </div>
         </v-col>
-        <v-col cols=6> 
+        <v-col cols=6  style="padding: 0; margin: 0; z-index:"> 
               <v-card id="card-mapa" class="py-5">
                 <mapa_regiones
                 :data_regiones="data_regiones"
@@ -109,7 +109,7 @@
                 />
               </v-card>
         </v-col>
-      </v-row>
+      </div>
     </div>
   </div>
 </template>
@@ -351,16 +351,15 @@ export default {
 }
 
 #region1-row {
-  overflow: hidden;
+  overflow: hidden !important;
   height: 100%;
-  background: #000;
-  align-items: stretch;
+  /* background: #000; */
+  display: flex;
 }
 
 
 #top-panel {
   justify-content: space-between;
-  align-items: stretch;
   gap: 10px;
 }
 
@@ -390,7 +389,8 @@ export default {
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 1.2vw;
+  font-size: 1vw;
+  text-align: center;
   font-weight: bold;
 }
 .gray-font-subtitle{

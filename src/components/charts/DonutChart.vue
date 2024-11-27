@@ -1,6 +1,5 @@
 <template>
-	<div>
-		<v-card flat>
+	<div class="d-flex flex-column" style="align-items: center;">
         <apexchart type="donut" ref="chart"
           :width="width"
           :height="height_chart" 
@@ -15,7 +14,6 @@
             <span class="legend-value">{{ ((series[index] / totalSeries) * 100).toFixed(2).replace(".",",") }}%</span>
           </div>
         </div>
-      </v-card> 
 	</div>
 </template>
 
@@ -81,41 +79,29 @@ export default {
 </script>
 
 <style lang="css" scoped>
-div.chart-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.legend-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  color: #b0b0b0;
-  border: 1px solid red;
-  font-weight: 500;
-}
 
-.legend-wrapper span {
-  font-size: .7vw;
-}
 
 .legend-item {
   display: flex;
   align-items: center;
-  margin-right: 15px;
+  justify-content: center;
+}
+
+.legend-wrapper {
+  display: flex;
+}
+.legend-wrapper span {
+  font-size: .7vw;
 }
 
 .legend-color {
-  width: 15px;
-  height: 15px;
+  width: 1vw;
+  height: 1vw;
   display: inline-block;
-  margin-right: 5px;
 }
 
 .legend-label {
-  margin-right: 5px;
-  font-size: 16px;
+  margin: .2vw;
   color: #7F7F7F;
 }
 
@@ -125,10 +111,5 @@ div.chart-wrapper {
   color: #103E8E;
 }
 
-@media(min-width: 992px) {
-  #donut-participantes {
-    height: 100px !important;
-    border: 1px solid red;
-  }
-}
+
 </style>

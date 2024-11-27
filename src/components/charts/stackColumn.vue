@@ -148,7 +148,6 @@
   <style scoped>
   .chart-wrapper {
 	margin: 0 auto;
-	border: 1px solid red;
 	padding: 0 !important;
   }
   </style>

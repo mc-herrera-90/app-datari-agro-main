@@ -237,7 +237,7 @@ export default {
 .basemap {
 	width: 100%;
 	height: 68vh;
-	margin: auto 0;
+	margin: 0;
 }
 </style>
 
