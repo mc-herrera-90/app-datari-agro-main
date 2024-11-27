@@ -33,18 +33,13 @@
         <v-spacer/>
       </v-app-bar>
       </div>
-      <div class="mt-2">
-        <v-row>
-            <v-col cols=3>
-                <v-card class="card-left">
-                  <v-card-subtitle>
-                    <p class="gray-font-title"> 
+      <div id="wrapper">
+          <v-card id="left-wrapper">
+                  <h2 class="gray-font-text"><b> 
                       Materias primas y
-                      residuos orgánicos:
-                    </p>
-                    <p class="gray-font-subtitle">Empresa: Akapacha</p>
-                  </v-card-subtitle>
-                  <v-card-text>
+                      residuos orgánicos:</b>
+                  </h2>
+                    <h3 class="gray-font-text">Empresa: Akapacha</h3>
                     <DonutChart2
                     :data_chart="{ chartSeries: chartSeries, chartOptions: chartOptions, colors: ['#103E8E', '#5390EA'] }"
                     />
@@ -75,34 +70,31 @@
                     </v-btn>
                     </div>
                     <div>
-                      <h2 class="subtitle">
+                      <p class="gray-font-text">
                         Rango de residuos orgánicos reciclados o reutilizados:
-                      </h2>
-                      <h1 class="mat_pri_number">51-75%</h1>
-                      <h2 class="subtitle">
+                      </p>
+                      <p class="mat_pri_number">51-75%</p>
+                      <p class="gray-font-text">
                         Rango de residuos orgánicos para compostaje:
-                      </h2>
-                      <h1 class="mat_pri_number">51-75%</h1>
+                      </p>
+                      <p class="mat_pri_number">51-75%</p>
 
                       <p class="gray-font-text"><b>Nota:</b></p>
 
-                      <p class="gray-font-text-small"> 
-                      Los productos: dátil, limón, maíz y tomate aún no 
-                      son materias primas  de uso anual en Akapacha, 
-                      actualmente, están en proceso de exploración.
+                      <p class="gray-font-text">
+                        <small>
+                          Los productos: dátil, limón, maíz y tomate aún no 
+                          son materias primas  de uso anual en Akapacha, 
+                          actualmente, están en proceso de exploración.
+                        </small> 
                       </p>
                     </div>
-                  </v-card-text>
               </v-card>
-            </v-col>
-            <v-col cols=9>
-              <v-card id="card-graph">
-                <SankeyChart 
-                class=""/>
-              </v-card>
-            </v-col>
-        </v-row>
-        </div>
+          <v-card id="right-wrapper">
+              <SankeyChart 
+              class=""/>
+          </v-card>
+      </div>
       </div>
 </template>
   
@@ -153,51 +145,55 @@
   
   <style scoped>
 #MateriaprimaView {
-  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+}
+#left-wrapper,
+#right-wrapper {
+  height: 100%;
+}
+#left-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 5px;
+  width: 30vw;
+}
+
+#right-wrapper {
+  width: 100%;
   height: 100%;
 }
 
-
-#card-graph, .card-left {
-  height: 100%;
-  overflow: hidden;
-}
-
-.gray-font-title{
-  color: #7F7F7F;
-  font-size: 1.5vw;
-  font-weight: bold;
-}
-.gray-font-subtitle{
-  padding: 0;
-  margin: 0;
-  color: #7F7F7F;
-  font-size: 1.2vw;
-  font-weight: normal;
-}
 .gray-font-text{
+  color: #7F7F7F;
+  font-weight: normal;
   padding: 0;
   margin: 0;
-  color: #7F7F7F;
+}
+ h2.gray-font-text {
+  font-size: 1.5vw;
+ }
+
+ h3.gray-font-text {
+  font-size: 1.4vw;
+ }
+
+ p.gray-font-text {
   font-size: 1vw;
-  font-weight: normal;
-}
+ }
 
-.gray-font-text-small{
-  padding: 0;
-  margin: 0;
-  color: #7F7F7F;
-  font-size: .7vw;
-  font-weight: normal;
-  line-height: .7vw;
-}
-
-/* TAMAÑOS BOTONES  */
-.v-btn{ 
-  font-size: .610vw;
-}
-
-
+ .v-btn {
+  font-size: .8vw;
+ }
 .active {
   background-color: #103E8E !important;/* Texto gris para los botones inactivos */
   color: white !important; /* Texto blanco para el botón activo */
@@ -207,20 +203,15 @@
   background-color: #103E8E !important;/* Texto gris para los botones inactivos */
 }
 .subtitle {
-  font-size: .914vw; /* Tamaño de fuente más pequeño */
   color: #7F7F7F;  /* Color gris */
-  margin: 0; /* Ajuste de espaciado */
   font-weight: normal;
 }
 
 .mat_pri_number {
-  font-size: 1.4vw; /* Tamaño de fuente más grande */
   color: #2F48A3;  /* Color azul */
   font-weight: bold;
   margin: 0; /* Espaciado entre los elementos */
-  margin-right: 60px;
   text-align: right;
+  font-size: 1.6vw;
 }
-
-
   </style>

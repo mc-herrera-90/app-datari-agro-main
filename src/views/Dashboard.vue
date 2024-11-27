@@ -30,10 +30,10 @@
       clipped
       dark
       color="blue darken-3"
+      :style="{zIndex: '1'}"
     >
-      <v-list nav class="mt-1 d-flex flex-column">
+      <v-list nav class="d-flex flex-column">
         <v-list-item
-          class="px-0"
           link
           :to="{ path: '/' }"
           active-class="white--text blue darken-3"
@@ -47,7 +47,6 @@
         </v-list-item>
 
         <v-list-item
-          class="px-0"
           link
           :to="{ path: '/caracterizacion/' }"
           active-class="white--text blue darken-3"
@@ -98,7 +97,7 @@
         <router-view :loading="loading"></router-view>
       </v-container>
     </v-main>
-    <v-footer dark app padless>
+    <v-footer dark app padless style="height: 5vh">
       <span class="white--text ml-2"><small>LAB ICT &copy; {{ new Date().getFullYear() }}</small> </span>
     </v-footer>
   </v-app>
@@ -152,18 +151,16 @@ export default {
 <style scoped>
 #dash {
   min-height: 100%;
-  height: auto;
-  overflow: hidden;
 }
 #main-content {
-  min-height: 100vh;
-  overflow: hidden;
+  min-height: 100%;
+  padding: 0;
+  /* overflow: visible; */
+
 }
 
 #inside-content {
-  padding: .4vw;
-  min-height: 70vh;
   height: 100%;
-  overflow:hidden;
+  overflow: visible;
 }
 </style>

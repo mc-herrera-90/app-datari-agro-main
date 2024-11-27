@@ -1,12 +1,10 @@
 <template>
-  <div>
     <apexchart type="donut" ref="chart"
       :width="'100%'"
       :options="chartOptions"
-      :series="series"
-      class="chart-wrapper">
+      class="chart"
+      :series="series">
     </apexchart>
-  </div>
 </template>
 
 <script>
@@ -32,17 +30,13 @@ export default {
               labels: {
                 show: true,
                 name: {
-                  fontSize: '16px',
                   fontFamily: 'Helvetica, Arial, sans-serif',
                   fontWeight: 400,
                   color: '#000066', // Color azul oscuro para el nombre
-                  offsetY: 0,
                 },
                 value: {
                   show: true,
-                  fontSize: '14px',
                   fontFamily: 'Helvetica, Arial, sans-serif',
-                  fontWeight: 400,
                   color: '#000066', // Color azul oscuro para el valor del porcentaje
                   offsetY: 0,
                   formatter: function (val, w) {
@@ -54,7 +48,6 @@ export default {
                 total: {
                   show: false,
                   label: 'Total',
-                  fontSize: '16px',
                   fontFamily: 'Helvetica, Arial, sans-serif',
                   fontWeight: 450,
                   color: '#373d3f',
@@ -69,7 +62,6 @@ export default {
         dataLabels: {
           enabled: true,
           style: {
-            fontSize: '10px',
             fontFamily: 'Arial, sans-serif',
             fontWeight: 400,
             colors: ['#FFFFFF'] // Cambia el color a azul oscuro para los dataLabels de porcentaje fuera del centro
@@ -108,9 +100,6 @@ export default {
 </script>
 
 <style scoped>
-.chart-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.chart {
 }
 </style>

@@ -1,11 +1,10 @@
 <template>
   <div id="container-graph-sankey">
-    <v-col
+    <div
       id="svg-sankey"
       ref="sankeyContainer"
       class="padre"
-    ></v-col>
-    <!-- Tooltip -->
+    ></div>
     <div id="tooltip" class="tooltip" ref="tooltip" style="opacity: 0;"></div>
     </div>
   </template>
@@ -87,7 +86,7 @@
         .nodeId(d => d.id)
         .nodeWidth(20)
         .nodePadding(10)
-        .extent([[1, 1], [width - 100, height - 10]]);
+        .extent([[1, 1], [width - 70, height - 10]]);
       const { nodes, links } = sankeyGenerator(data);
   
     
@@ -163,11 +162,11 @@
   
   <style scoped>
   #container-graph-sankey {
-    overflow: hidden;
     width: 100%;
     height: 75vh;
   }
   .padre {
+    padding: 10px;
     height: 90%;
     width: 100%;
   }

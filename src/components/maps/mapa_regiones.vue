@@ -1,13 +1,10 @@
 <template>
-	<div id="map">
 			<div id="mapContainer" class="basemap"></div>
-	</div>
 </template>
 
 <script>
 import mapboxgl from "mapbox-gl";
 export default {
-
   name: 'mapa_regiones',
   props:[
   	'data_regiones','data_comunas'
@@ -125,15 +122,7 @@ export default {
             'circle-color': '#3ABB5C',
             'circle-stroke-width': 1,
           },
-          // "filter": ['all',["==", "nombre", nombre_comuna]]
-
         });
-
-        // mapa.on('click','comunas', (e) => {
-        // 	mapa.flyTo({
-        // 		center: e.features[0].geometry.coordinates
-        // 	})
-        // });
 
         const popup = new mapboxgl.Popup({
 					closeButton: false,
@@ -236,8 +225,7 @@ export default {
 
 .basemap {
 	width: 100%;
-	height: 68vh;
-	margin: 0;
+	height: 29vw;
 }
 </style>
 

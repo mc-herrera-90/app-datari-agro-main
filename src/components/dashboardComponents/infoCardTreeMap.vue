@@ -1,15 +1,13 @@
 <template>
 	<div id="infoCardTreeMap">
-		<v-card style="padding: 10px">
         <h4 class="gray-font-title">
           {{title}}
         </h4>
         <TreeMap
           :data="data_chart"
-          :height="'100%'"
+          :height="'250vw'"
           :width="'100%'" 
         />
-    </v-card>
 	</div>
 </template>
 
@@ -34,7 +32,6 @@ export default {
   mounted(){
     const predata = this.get_predata_chart(this.data);
     this.data_chart = this.get_data_chart(predata);
-
   },
   computed:{
     updateData(){
@@ -120,7 +117,6 @@ export default {
   height: auto;
   padding: 0 !important;
   margin: 0 !important;
-  overflow: hidden;
 }
 .gray-font-title{
   padding: 0;

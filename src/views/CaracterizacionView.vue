@@ -40,7 +40,7 @@
               <v-card class="d-flex flex-column" style="justify-content: space-around; align-items: center; width: 100%">
                 <h4 class="gray-font-title">Productores Participantes</h4>
                 <DonutChart 
-                :width="'50%'"
+                :width="'60%'"
                 :data_chart="{ serie: chartSeries, categories: chartOptions.labels, colors: ['#103E8E', '#5390EA'] }" 
                 />
               </v-card>
@@ -65,7 +65,7 @@
                   </v-card>
             </div>
           </div>
-            <v-card>
+            <v-card style="padding: 10px">
                 <InfoCardTreeMap 
                 :title="'Productos'"
                 :data="maptreeData"
@@ -101,14 +101,12 @@
                   </v-card>
             </div>
         </v-col>
-        <v-col cols=6  style="padding: 0; margin: 0; z-index:"> 
-              <v-card id="card-mapa" class="py-5">
+        <v-card id="card-mapa" class="py-5" style="width: 100%;">
                 <mapa_regiones
                 :data_regiones="data_regiones"
                 :data_comunas="data_comunas"
                 />
-              </v-card>
-        </v-col>
+          </v-card>
       </div>
     </div>
   </div>
@@ -346,12 +344,9 @@ export default {
 #CaracterizacionView {
   /* border: 2px solid red; */
   height: 100%;
-  overflow: hidden;
-  /* z-index: -1; */
 }
 
 #region1-row {
-  overflow: hidden !important;
   height: 100%;
   /* background: #000; */
   display: flex;
@@ -362,16 +357,6 @@ export default {
   justify-content: space-between;
   gap: 10px;
 }
-
-
-
-#card-participantes {
-  min-height: 100%;
-  height: 14.5vw;
-  margin: 0;
-  padding: 0;
-}
-
 
 .v-btn.white--text {
   background-color: white;
@@ -402,7 +387,6 @@ export default {
 }
 /* MAPA */
 #card-mapa {
-  overflow: hidden;
   height: 100%;
 }
 
