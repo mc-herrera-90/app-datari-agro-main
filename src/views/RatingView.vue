@@ -79,7 +79,7 @@
   <style scoped>
 
   #RatingView {
-    height: 84vh;
+    height: 100%;
     overflow: hidden;
   }
 
@@ -111,7 +111,7 @@
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 1.5vw;
+  font-size: 1.4vw;
   font-weight: normal;
 }
 .gray-font-text{

@@ -374,8 +374,8 @@ export default {
 
 <style scoped>
 #CaracterizacionView {
-  border: 2px solid red;
-  height: 100vh;
+  /* border: 2px solid red; */
+  height: 100%;
   /* z-index: -1; */
 }
 

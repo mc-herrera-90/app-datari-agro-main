@@ -28,11 +28,10 @@
       app
       :permanent="menulateral"
       clipped
-      width="295"
       dark
       color="blue darken-3"
     >
-      <v-list nav class="mt-1 d-flex flex-column" height="95%">
+      <v-list nav class="mt-1 d-flex flex-column">
         <v-list-item
           class="px-0"
           link
@@ -94,8 +93,8 @@
         </div>
       </v-list>
     </v-navigation-drawer>
-    <v-main style="background-color:#D5D8DC">
-      <v-container fluid transition="fade-transition">
+    <v-main style="background-color:#D5D8DC" id="main-content">
+      <v-container fluid transition="fade-transition" id="inside-content">
         <router-view :loading="loading"></router-view>
       </v-container>
     </v-main>
@@ -152,10 +151,19 @@ export default {
 
 <style scoped>
 #dash {
-  max-height: 98vh;
+  min-height: 100%;
+  height: auto;
   overflow: hidden;
 }
-.v-list-item {
-  flex: 0;
+#main-content {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#inside-content {
+  padding: .4vw;
+  min-height: 70vh;
+  height: 100%;
+  overflow:hidden;
 }
 </style>

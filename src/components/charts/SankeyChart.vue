@@ -1,5 +1,5 @@
 <template>
-  <div id="container-graph">
+  <div id="container-graph-sankey">
     <v-col
       id="svg-sankey"
       ref="sankeyContainer"
@@ -87,14 +87,14 @@
         .nodeId(d => d.id)
         .nodeWidth(20)
         .nodePadding(10)
-        .extent([[1, 1], [width - 1, height - 1]]);
+        .extent([[1, 1], [width - 100, height - 10]]);
       const { nodes, links } = sankeyGenerator(data);
   
     
       
       const svg = d3.select(this.$refs.sankeyContainer)
         .append('svg')
-        .attr('width', '100vw')
+        .attr('width', '100%')
         .attr('height', '75vh');
 
       const tooltip = d3.select(this.$refs.tooltip);
@@ -162,14 +162,14 @@
   </script>
   
   <style scoped>
-  #container-graph {
+  #container-graph-sankey {
     overflow: hidden;
     width: 100%;
     height: 75vh;
   }
   .padre {
     height: 90%;
-    width: 90%;
+    width: 100%;
   }
 
 .tooltip {

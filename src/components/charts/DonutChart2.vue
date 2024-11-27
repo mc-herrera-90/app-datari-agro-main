@@ -2,7 +2,6 @@
   <div>
     <apexchart type="donut" ref="chart"
       :width="'100%'"
-      :height="height_chart"
       :options="chartOptions"
       :series="series"
       class="chart-wrapper">
@@ -30,7 +29,6 @@ export default {
         plotOptions: {
           pie: {
             donut: {
-              size: '55%',
               labels: {
                 show: true,
                 name: {

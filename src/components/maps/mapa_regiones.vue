@@ -235,7 +235,6 @@ export default {
 <style lang="scss" scoped>
 
 .basemap {
-	border: 1px solid red;
 	width: 100%;
 	height: 68vh;
 	margin: auto 0;

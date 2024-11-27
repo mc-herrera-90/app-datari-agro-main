@@ -46,7 +46,6 @@
                   </v-card-subtitle>
                   <v-card-text>
                     <DonutChart2
-                    :height_chart="280" 
                     :data_chart="{ chartSeries: chartSeries, chartOptions: chartOptions, colors: ['#103E8E', '#5390EA'] }"
                     />
                     <p class="gray-font-text">
@@ -154,15 +153,24 @@
   
   <style scoped>
 #MateriaprimaView {
+  overflow: hidden;
+  height: 100%;
 }
 
-  .gray-font-title{
+
+#card-graph, .card-left {
+  height: 100%;
+  overflow: hidden;
+}
+
+.gray-font-title{
   color: #7F7F7F;
   font-size: 1.5vw;
   font-weight: bold;
 }
 .gray-font-subtitle{
   padding: 0;
+  margin: 0;
   color: #7F7F7F;
   font-size: 1.2vw;
   font-weight: normal;
@@ -188,6 +196,8 @@
 .v-btn{ 
   font-size: .610vw;
 }
+
+
 .active {
   background-color: #103E8E !important;/* Texto gris para los botones inactivos */
   color: white !important; /* Texto blanco para el botón activo */
@@ -199,7 +209,7 @@
 .subtitle {
   font-size: .914vw; /* Tamaño de fuente más pequeño */
   color: #7F7F7F;  /* Color gris */
-  margin: 8px 0 4px; /* Ajuste de espaciado */
+  margin: 0; /* Ajuste de espaciado */
   font-weight: normal;
 }
 
@@ -211,7 +221,6 @@
   margin-right: 60px;
   text-align: right;
 }
-.card-left{
-  height: 100%;
-}
+
+
   </style>
