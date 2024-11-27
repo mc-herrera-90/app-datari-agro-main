@@ -1,16 +1,15 @@
 <template>
 	<div id="infoCardTreeMap">
 		<v-card>
-      <v-card-title class="justify-left pa-1 ml-3">
-        <h4 class="gray-font-title ml-2">
+      <v-card-title>
+        <h4 class="gray-font-title">
           {{title}}
         </h4>
       </v-card-title>
       <v-card-text>
         <TreeMap 
-          style="margin-top:-30px;"
           :data="data_chart"
-          :height="'100vw'"
+          :height="'100%'"
           :width="'100%'" 
         />
       </v-card-text>
@@ -121,11 +120,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#infoCardTreeMap {
+  height: auto;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
 .gray-font-title{
   padding: 0;
-  margin: 0;
+  margin: 0 !important;
   color: #7F7F7F;
-  font-size: 22px;
+  font-size: 1.4vw;
   font-weight: bold;
 }
 </style>

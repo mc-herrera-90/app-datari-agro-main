@@ -34,7 +34,7 @@
       </v-app-bar>
 
     </div>
-        <v-card class="px-3 py-3 mt-3" id="body-raiting">
+        <v-card class="px-3 py-3 mt-2" id="body-raiting">
                 <p class="gray-font-title">Rating</p>
                 <p class="gray-font-subtitle">Productores</p>
                 <span class="gray-font-text">Buenas Prácticas Sostenibilidad Agrícola</span>

@@ -33,62 +33,46 @@
       </v-app-bar>
 
     </div>
-    <div class="body" id="region1">
+    <div id="region1" class="mt-2">
       <v-row id="region1-row">
-        <v-col cols=6 id="region1-col-left">
-          <v-row id="region1-row-1" style="border: 1px solid red;">
-            <v-col cols=5 class="pa-1 text-center" id="region1-row-1-col-1">
-              <v-card class="py-4" id="card-participantes">
+        <v-col cols=6 class="d-flex flex-column" style="gap: 6px">
+          <div class="d-flex" id="top-panel">
+              <v-card class="py-1" id="card-participantes">
                 <h4 class="gray-font-title">Productores Participantes</h4>
                 <DonutChart 
                 :width="'60%'"
                 :data_chart="{ serie: chartSeries, categories: chartOptions.labels, colors: ['#103E8E', '#5390EA'] }" 
                 />
               </v-card>
-            </v-col>
-            <v-col cols=2 class="pa-1 text-center">
-              <v-card class="d-flex flex-column justify-space-around align-center py-4" style="height: 100%">
+              <v-card class="d-flex flex-column text-center" style="justify-content: space-between">
                 <p class="gray-font-title">Tipo Empresa</p>
                 <p class="gray-font-subtitle">Persona Jurídica</p>
                 <p class="number">1</p>
                 <p class="gray-font-subtitle">Persona Natural</p>
                 <p class="number">6</p>
               </v-card>
-            </v-col>
-            <v-col cols=5 class="pa-0">
-                <v-col class="pa-1">
+            <div class="d-flex flex-column" style="gap: 10px; justify-content: space-between;">
                   <v-card class="text-center">
                     <p class="gray-font-title">Microempresas</p>
                     <p class="gray-font-subtitle">0 - 2400 UF</p>
                     <p class="number">100%</p>
                   </v-card>
-                </v-col>
-                <v-col class="pa-1 text-center">
                   <v-card class="text-center">
                     <h4 class="gray-font-title">Propiedad</h4>
                     <StackColumn
                       :data_chart="data_chart"
                     />
                   </v-card>
-                </v-col>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols=12 class="pa-1">
-              <v-card>
+            </div>
+          </div>
+            <v-card>
                 <InfoCardTreeMap 
                 :title="'Productos'"
                 :data="maptreeData"
                 />
-              </v-card>
-            </v-col>
-          </v-row>
-
-          <v-row id="region1-row-3">
-            <v-col cols=12>
-              <v-row>
-                <v-col cols=4 class="pa-1">
-                  <v-card height="96">
+            </v-card>
+            <div class="d-flex" style="justify-content: space-between; gap: 10px">
+                  <v-card style="width: 100%;">
                     <InfoCardDoble
                     class="pt-3"
                     :title="'Producción Anual (TON)'"
@@ -96,9 +80,7 @@
                     :data1="'252,4'"
                     />
                   </v-card>
-                </v-col>
-                <v-col cols=4 class="pa-1">
-                  <v-card height="96">
+                  <v-card style="width: 100%;">
                     <InfoCardDoble
                     class="pt-3"
                     :title="'Consumo agua Anual (M3)'"
@@ -106,9 +88,7 @@
                     :data1="'48.084'"
                     />
                   </v-card>
-                </v-col>
-                <v-col cols=4 class="pa-1">
-                  <v-card>
+                  <v-card style="width: 100%">
                     <InfoCardTriple
                     :title="'Rango superficie cultivada (Ha)'"
                     :name1="'Menos de 1 Ha'"
@@ -119,12 +99,9 @@
                     :data3="'6,67%'"
                     />
                   </v-card>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
+                </div>
         </v-col>
-        <v-col cols=6 class="pa-0"> 
+        <v-col cols=6> 
               <v-card id="card-mapa" class="py-5">
                 <mapa_regiones
                 :data_regiones="data_regiones"
@@ -137,13 +114,6 @@
   </div>
 </template>
 
-<style lang="css" scoped>
-.centrar{
-    align-items: center;
-    justify-content: center;
-    margin-top:0px;
-}
-</style>
 
 <style type="text/css">
 .boton_cerrar_mapa{
@@ -376,46 +346,34 @@ export default {
 #CaracterizacionView {
   /* border: 2px solid red; */
   height: 100%;
+  overflow: hidden;
   /* z-index: -1; */
-}
-
-#region1 {
-  border: 2px solid green;
-
-  background-color: aliceblue;
-  position: relative;
 }
 
 #region1-row {
   overflow: hidden;
-  border: 2px solid yellow;
-  margin: 0 auto;
+  height: 100%;
+  background: #000;
+  align-items: stretch;
 }
 
-#region1-col-left {
-  /* z-index: 9999; */
-  border: 2px solid #2F48A3;
-  width: 100%;
-  margin: 0 auto;
-  
+
+#top-panel {
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 10px;
 }
 
-#region1-row-1 {
-  align-items: strench;
-}
+
 
 #card-participantes {
   min-height: 100%;
   height: 14.5vw;
   margin: 0;
-  border: 1px solid red;
+  padding: 0;
 }
 
-#region1-row-3 {
-  border: 1px solid red;
-  justify-content: center;
-  /* margin: 0 auto; */
-}
+
 .v-btn.white--text {
   background-color: white;
   color: black !important;
@@ -444,8 +402,8 @@ export default {
 }
 /* MAPA */
 #card-mapa {
-  margin-left: .5vw;
   overflow: hidden;
+  height: 100%;
 }
 
 </style>
