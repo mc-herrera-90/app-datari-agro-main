@@ -66,7 +66,7 @@ const routes = [
           });
         }
       },
-      
+
     ],
     meta: {
       requiresAuth: true
@@ -75,21 +75,21 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
 
 
 router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requiresAuth)) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
     if (store.getters.isLoggedIn) {
       next()
       return
     }
-    next('/login') 
+    next('/login')
   } else {
-    next() 
+    next()
   }
 })
 
