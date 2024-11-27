@@ -46,7 +46,7 @@
                     <p class="gray-font-text">
                       Gestión de residuos orgánicos:
                     </p>
-                    <div class="d-flex justify-center my-3">
+                    <div class="d-flex justify-center">
                     <v-btn
                       class="rounded-pill unactive"
                       color="grey lighten-2"
@@ -180,19 +180,19 @@
   margin: 0;
 }
  h2.gray-font-text {
-  font-size: 1.5vw;
+  font-size: 1.3vw;
  }
 
  h3.gray-font-text {
-  font-size: 1.4vw;
  }
 
  p.gray-font-text {
   font-size: 1vw;
+  line-height: normal;
  }
 
  .v-btn {
-  font-size: .8vw;
+  font-size: .7vw;
  }
 .active {
   background-color: #103E8E !important;/* Texto gris para los botones inactivos */
@@ -202,16 +202,15 @@
   color: #7F7F7F; 
   background-color: #103E8E !important;/* Texto gris para los botones inactivos */
 }
-.subtitle {
-  color: #7F7F7F;  /* Color gris */
-  font-weight: normal;
-}
+
 
 .mat_pri_number {
   color: #2F48A3;  /* Color azul */
   font-weight: bold;
   margin: 0; /* Espaciado entre los elementos */
+  margin-right: 2em;
+  line-height: normal;
   text-align: right;
-  font-size: 1.6vw;
+  font-size: 1.4vw;
 }
   </style>

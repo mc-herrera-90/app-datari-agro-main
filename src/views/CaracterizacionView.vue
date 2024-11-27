@@ -63,7 +63,7 @@
                   </v-card>
             </div>
           </div>
-            <v-card style="padding: 10px" id="middle-panel">
+            <v-card style="padding: 5px;" id="middle-panel">
                 <InfoCardTreeMap 
                 :title="'Productos'"
                 :data="maptreeData"
@@ -349,17 +349,19 @@ export default {
 #top-panel {
   justify-content: space-between;
   gap: 5px;
-  height: 10%;
+  height: 100%;
   overflow: hidden;
 }
 
 #middle-panel {
-  height: 50%;
+  height: auto;
+
 }
 #bottom-panel {
   display: flex;
-  height: auto;
+  height: 100%;
   gap: 5px;
+
 }
 .v-btn.white--text {
   background-color: white;

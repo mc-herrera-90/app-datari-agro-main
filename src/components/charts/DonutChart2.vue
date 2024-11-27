@@ -1,6 +1,6 @@
 <template>
     <apexchart type="donut" ref="chart"
-      :width="'100%'"
+      :width="'90%'"
       :options="chartOptions"
       class="chart"
       :series="series">
