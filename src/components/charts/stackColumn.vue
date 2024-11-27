@@ -1,7 +1,5 @@
 <template>
-	<div>
-	  <apexchart type="bar" height="70%" ref="chart" :options="chartOptions" :series="series" class="chart-wrapper"></apexchart>
-	</div>
+	  <apexchart type="bar" height="100px" ref="chart" :options="chartOptions" :series="series" class="chart-wrapper"></apexchart>
   </template>
   
   <script>
@@ -147,8 +145,8 @@
   
   <style scoped>
   .chart-wrapper {
-	margin: 0 auto;
-	padding: 0 !important;
+		margin: 0;
+		padding: 0;
   }
   </style>
   

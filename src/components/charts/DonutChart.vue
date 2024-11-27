@@ -1,8 +1,7 @@
 <template>
 	<div class="d-flex flex-column" style="align-items: center;">
         <apexchart type="donut" ref="chart"
-          :width="width"
-          :height="height_chart" 
+          :width="'70%'"
           :options="chartOptions" 
           :series="series" 
           class="chart-wrapper" id="donut-participantes">

@@ -5,8 +5,7 @@
         </h4>
         <TreeMap
           :data="data_chart"
-          :height="'250vw'"
-          :width="'100%'" 
+          :height="'100%'"
         />
 	</div>
 </template>
@@ -114,15 +113,15 @@ export default {
 
 <style lang="css" scoped>
 #infoCardTreeMap {
-  height: auto;
   padding: 0 !important;
   margin: 0 !important;
+  border: 1px solid red;
 }
 .gray-font-title{
   padding: 0;
   margin: 0 !important;
   color: #7F7F7F;
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   font-weight: bold;
 }
 </style>

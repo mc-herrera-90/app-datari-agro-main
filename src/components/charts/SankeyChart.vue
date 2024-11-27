@@ -86,7 +86,7 @@
         .nodeId(d => d.id)
         .nodeWidth(20)
         .nodePadding(10)
-        .extent([[1, 1], [width - 70, height - 10]]);
+        .extent([[1, 1], [width - 100, height - 10]]);
       const { nodes, links } = sankeyGenerator(data);
   
     
@@ -157,13 +157,13 @@
     },
   };
 
-  
   </script>
   
   <style scoped>
   #container-graph-sankey {
     width: 100%;
     height: 75vh;
+    border: 1px solid red;
   }
   .padre {
     padding: 10px;
