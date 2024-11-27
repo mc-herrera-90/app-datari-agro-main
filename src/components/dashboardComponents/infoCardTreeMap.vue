@@ -1,18 +1,14 @@
 <template>
 	<div id="infoCardTreeMap">
-		<v-card>
-      <v-card-title>
+		<v-card style="padding: 10px">
         <h4 class="gray-font-title">
           {{title}}
         </h4>
-      </v-card-title>
-      <v-card-text>
-        <TreeMap 
+        <TreeMap
           :data="data_chart"
           :height="'100%'"
           :width="'100%'" 
         />
-      </v-card-text>
     </v-card>
 	</div>
 </template>

@@ -3,7 +3,6 @@
     <apexchart
       type="treemap"
       :height="height"
-      width="100%"
       ref="chart"
       :options="chartOptions"
       :series="series"
@@ -30,7 +29,6 @@ export default {
     },
     height: {
       type: [String, Number],
-      default: 175
     }
   },
 
@@ -44,7 +42,6 @@ export default {
       chartOptions: {
         legend: { show: false },
         chart: {
-          height: this.height,
           type: 'treemap',
           toolbar: { show: false }
         },
@@ -123,10 +120,7 @@ export default {
 
 <style lang="css" scoped>
 div.chart-wrapper {
-  margin-top: 0px;
-  margin-left: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 </style>

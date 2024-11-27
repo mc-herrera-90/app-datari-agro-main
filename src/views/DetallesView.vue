@@ -44,46 +44,37 @@
         <div class="body-detalles-view mt-4">
             <v-row>
                 <v-col cols="6" class="ma-0 pa-0">
-                    <v-row class="ma-0 pa-0 ">
-                        <v-col cols="3" class="pa-1 ">
-                            <v-card class="text-center" height="200">
-                                    <p class="gray-font-title1">
-                                        Ubicación
-                                    </p>
-                                    <p class="blue_number mt-10">
-                                        {{ generalData.productor.ubicacion_predio }}
-                                    </p>
-                                </v-card>
-                            </v-col>
-                            <v-col cols="9" class="pa-1 ma-0">
-                                <v-card height="200" class="ma-0 pa-0">
-                                <span class="ml-4 gray-font-title1">
-                                    Productos
-                                </span>
+                <div class="d-flex">
+                    <v-card class="text-center">
+                        <p class="gray-font-title1">
+                            Ubicación
+                        </p>
+                        <p class="blue_number mt-10">
+                                {{ generalData.productor.ubicacion_predio }}
+                        </p>
+                    </v-card>
+                    <v-card>
+                        <h3 class="ml-4 gray-font-title1">Productos</h3>
                                 <TreeMap
                                 style="margin-top: -32px; margin-left: 4px; margin-right: 4px;"
                                 :data="maptreeData"
                                 />
                             </v-card>
-                        </v-col>
-                    </v-row>
+                        </div>
                     <!-- Hasta acá la primera fila -->
-                    <v-row class="ma-0 pa-0">
-                        <v-col cols="12" class="pa-1">
-                            <v-card height="192">
-                                <v-row class="ma-0 pa-0">
-                                    <!-- Sección de Total Trabajadores -->
-                                    <v-col cols="4" class=" text-center ">
-                                        <p class="gray-font-title1 ma-0">Capital Humano</p>
-                                        <p class="gray-font-subtitle">Total Trabajadores</p>
-                                        <span class="gray-font-text">(cantidad)</span>
-                                        <p class="blue_number">{{generalData.trabajadores.total  }}</p>
-                                    </v-col>
-                                    <!-- Sección de Formación -->
-                                    <v-col cols="4" class="text-center ma-0 pa-0">
-                                        <p class="gray-font-subtitle text-center ma-0 pa-0">Formación</p>
-
-                                        <div class="chips-container">
+                    <v-card style="width: 100%">
+                        <div class="d-flex">
+                            <!-- Sección de Total Trabajadores -->
+                            <div id="capital-humano-wrapper">
+                                <h4 class="gray-font-title1">Capital Humano</h4>
+                                <p class="gray-font-subtitle">Total Trabajadores</p>
+                                <div class="gray-font-text">(cantidad)</div>
+                                <p class="blue_number">{{generalData.trabajadores.total  }}</p>
+                            </div>
+                            <!-- Sección de Formación -->
+                            <div id="formacion-wrapper">
+                                <h4 class="gray-font-subtitle">Formación</h4>
+                                    <div class="chips-container">
                                             <div class="chips-container-inner">
                                             <span
                                                 :class="generalData.trabajadores.postgrado > 0 ? 'blue-chip' : 'gray-chip'"
@@ -91,7 +82,6 @@
                                             >Postgrado</span>
                                             <span
                                                 :class="generalData.trabajadores.postgrado > 0 ? 'blue-font-text' : 'gray-font-text'"
-                                                class="ml-2 pa-0"
                                             >{{ generalData.trabajadores.postgrado }}</span>
                                             </div>
 
@@ -102,7 +92,6 @@
                                             >Pregrado</span>
                                             <span
                                                 :class="generalData.trabajadores.pregrado > 0 ? 'blue-font-text' : 'gray-font-text'"
-                                                class="ml-2 pa-0"
                                             >{{ generalData.trabajadores.pregrado }}</span>
                                             </div>
 
@@ -113,7 +102,6 @@
                                             >E. Media</span>
                                             <span
                                                 :class="generalData.trabajadores.media > 0 ? 'blue-font-text' : 'gray-font-text'"
-                                                class="ml-2 pa-0"
                                             >{{ generalData.trabajadores.media }}</span>
                                             </div>
 
@@ -124,14 +112,12 @@
                                             >E. Básica</span>
                                             <span
                                                 :class="generalData.trabajadores.basica > 0 ? 'blue-font-text' : 'gray-font-text'"
-                                                class="ml-2 pa-0"
                                             >{{ generalData.trabajadores.basica }}</span>
                                             </div>
-                                        </div>
-                                        </v-col>
-
-                                    <!-- Sección de Capacitación -->
-                                    <v-col cols="4" class="ma-0 pa-0 text-center">
+                                    </div>
+                            </div>
+                            <!-- Sección de Capacitación -->
+                            <div id="capacitacion-wrapper">
                                 <span class="gray-font-subtitle">Capacitación</span>
                                 <div class="chips-container">
                                     <span class="gray-font-text">(Frecuencia cap. BPA)</span>
@@ -150,11 +136,9 @@
                                     {{ generalData.trabajadores.frecuencia_capacitacion_seguridad[0].frecuencia_capacitacion_seguridad || 'N/A' }}
                                     </span>
                                 </div>
-                                </v-col>
-                                </v-row>
-                            </v-card>
-                        </v-col>
-                    </v-row>
+                            </div>
+                        </div>
+                    </v-card>
                     <!-- Hasta acá la segunda fila -->
                     <v-row class="ma-0 pa-0">
                         <v-col cols=8 class="pa-1">
@@ -181,7 +165,6 @@
                             </v-row>
                             <!--  -->
                             <v-row class="ma-0 pa-0">
-                                
                                 <v-col class="pa-1 text-center">
                                     <v-card class="pa-0" height="175">
                                     <p class="gray-font-subtitle text-center ma-0 pa-0">Evolución producción</p>
@@ -591,23 +574,44 @@ export default {
 
 
 <style>
-.body-detalles-view{
-    padding: 0;
-    margin: 0;
+#DetallesView {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid red;
+}
+
+
+
+#capacitacion-wrapper {
+    width: 100%; 
+    border: 1px solid red;
+}
+#formacion-wrapper {
+    width: 100%;
+    border: 1px solid red;
+}
+
+#capital-humano-wrapper {
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .gray-font-title1 {
     padding: 0;
     margin: 0;
     color: #7F7F7F;
-    font-size: 30px;
+    font-size: 1.5vw;
+    text-align: center;
     font-weight: Bold;
 }
 .gray-font-subtitle{
     padding: 0;
     margin: 0;
     color: #7F7F7F;
-    font-size: 20px;
+    font-size: 1.2vw;
     font-weight: bold;
 }
 .gray-font-text {
