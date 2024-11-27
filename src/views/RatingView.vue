@@ -79,7 +79,7 @@
   <style scoped>
 
   #RatingView {
-    height: 36vw;
+    height: 84vh;
     overflow: hidden;
   }
 
@@ -91,7 +91,7 @@
     color: black !important;
   }
   .image-container {
-    height: 19vw;
+    height: 49vh;
     background-image: url('../media/raiting_E-adjust.png');
     background-position: center;
     background-size: contain;

@@ -32,35 +32,29 @@
         </div>
         <v-spacer/>
       </v-app-bar>
-
-    </div>
-      <div class="mt-4">
+      </div>
+      <div class="mt-2">
         <v-row>
-          <v-col cols=12>
-            <v-row>
-              <v-col cols=3>
-                <v-card height="79vh">
+            <v-col cols=3>
+                <v-card>
                   <v-card-subtitle>
                     <p class="gray-font-title"> 
                       Materias primas y
-                    </p>
-                    <p class="gray-font-title">                       
                       residuos orgánicos:
                     </p>
                     <p class="gray-font-subtitle">Empresa: Akapacha</p>
                   </v-card-subtitle>
                   <v-card-text>
                     <DonutChart2
-                    :width="340" 
                     :height_chart="280" 
                     :data_chart="{ chartSeries: chartSeries, chartOptions: chartOptions, colors: ['#103E8E', '#5390EA'] }"
                     />
-                    <p class="gray-font-text mt-8">
+                    <p class="gray-font-text">
                       Gestión de residuos orgánicos:
                     </p>
-                    <div class="d-flex justify-center ma-3">
+                    <div class="d-flex justify-center my-3">
                     <v-btn
-                      class="mx-2 rounded-pill unactive"
+                      class="rounded-pill unactive"
                       color="grey lighten-2"
                       depressed
                     >
@@ -74,7 +68,7 @@
                       A veces
                     </v-btn>
                     <v-btn
-                      class="mx-2 rounded-pill unactive"
+                      class="rounded-pill unactive"
                       color="grey lighten-2"
                       depressed
                     >
@@ -102,17 +96,15 @@
                   </v-card-text>
               </v-card>
             </v-col>
-            <v-col cols=9 class="mt-3 text-center">
-              <v-card height="79vh" width="100%" >
+            <v-col cols=9>
+              <v-card id="card-graph">
                 <SankeyChart 
-                class="pl-3"/>
+                class=""/>
               </v-card>
             </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </div>
-  </div>
+        </v-row>
+      </div>
+      </div>
 </template>
   
   <script>
@@ -161,39 +153,42 @@
   </script>
   
   <style scoped>
+#MateriaprimaView {
+  border: 1px solid red;
+}
+
   .gray-font-title{
-  padding: 0;
-  margin: 10;
   color: #7F7F7F;
-  font-size: 36px;
+  font-size: 1.5vw;
   font-weight: bold;
 }
 .gray-font-subtitle{
   padding: 0;
-  margin: 10px;
   color: #7F7F7F;
-  font-size: 26px;
+  font-size: 1.2vw;
   font-weight: normal;
 }
 .gray-font-text{
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 20px;
+  font-size: 1vw;
   font-weight: normal;
 }
+
 .gray-font-text-small{
   padding: 0;
   margin: 0;
   color: #7F7F7F;
-  font-size: 14px;
+  font-size: .7vw;
   font-weight: normal;
+  line-height: .7vw;
 }
 
-.rounded-pill {
-  border-radius: 50px;
+/* TAMAÑOS BOTONES  */
+.v-btn{ 
+  font-size: .610vw;
 }
-
 .active {
   background-color: #103E8E !important;/* Texto gris para los botones inactivos */
   color: white !important; /* Texto blanco para el botón activo */
@@ -203,18 +198,22 @@
   background-color: #103E8E !important;/* Texto gris para los botones inactivos */
 }
 .subtitle {
-  font-size: 20px; /* Tamaño de fuente más pequeño */
+  font-size: .914vw; /* Tamaño de fuente más pequeño */
   color: #7F7F7F;  /* Color gris */
   margin: 8px 0 4px; /* Ajuste de espaciado */
   font-weight: normal;
 }
 
 .mat_pri_number {
-  font-size: 28px; /* Tamaño de fuente más grande */
+  font-size: 1.4vw; /* Tamaño de fuente más grande */
   color: #2F48A3;  /* Color azul */
   font-weight: bold;
-  margin: 0 0 16px; /* Espaciado entre los elementos */
+  margin: 0; /* Espaciado entre los elementos */
   margin-right: 60px;
   text-align: right;
+}
+
+#card-graph{
+  border: 1px solid red;
 }
   </style>

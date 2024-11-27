@@ -124,17 +124,13 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-col cols=6 class="pa-3"> 
-          <v-row>
-            <v-col cols=12 class="pa-1">
-              <v-card height="748" class="d-flex pt-16">
+        <v-col cols=6 class="pa-0"> 
+              <v-card id="card-mapa" class="py-5">
                 <mapa_regiones
                 :data_regiones="data_regiones"
                 :data_comunas="data_comunas"
                 />
               </v-card>
-            </v-col>
-          </v-row>
         </v-col>
       </v-row>
     </div>
@@ -445,6 +441,11 @@ export default {
   color: #7F7F7F;
   font-size: .63vw;
   font-weight: normal;
+}
+/* MAPA */
+#card-mapa {
+  margin-left: .5vw;
+  overflow: hidden;
 }
 
 </style>

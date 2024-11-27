@@ -1,51 +1,10 @@
 <template>
 	<div id="map">
-	<!-- 	<v-card flat width="1300" color="white">
-			<v-card-text> -->
-				<!-- <div >
-					<v-row>
-
-				<v-col cols=3>
-					<v-card flat  color="white" height="100%">
-						<v-card-title class="black--text">
-							<v-icon left color="black"> 
-             		mdi-map-marker
-            	</v-icon>
-            	<h3 class="font-weight-light">Regiones</h3>
-						</v-card-title>
-						<v-card-subtitle class="mt-0 black--text">
-							Seleccione una región 
-						</v-card-subtitle>
-						<v-card-text  class="black--text mt-0" >
-							<div v-for="(item,i) in data_regiones">
-								<v-chip
-									v-model="selected_region"
-									class="ma-1"
-									:color="i == selected_region ? 'blue' : 'grey'"
-									outlined
-									label
-									@click="cambiarRegion(item,i,mapa_)"
-								>
-									{{item.nombre}}
-								</v-chip>
-							</div>
-						</v-card-text>
-					</v-card>
-				</v-col>
-				<v-col cols=9>
-				</v-col>
-			</v-row>
-		</div> -->
-		
-			
-<v-card>
-<div id="mapContainer" class="basemap"></div>
-</v-card>
+			<div id="mapContainer" class="basemap"></div>
 	</div>
 </template>
 
 <script>
-import { zoom } from "d3";
 import mapboxgl from "mapbox-gl";
 export default {
 
@@ -83,9 +42,7 @@ export default {
   	this.addComunasData(this.mapa_);
   	this.addLayerRegiones(this.mapa_);
   	this.addLayerComunas(this.mapa_);
-
   	
-
   },
   methods:{
 		get_zoom_region(codigo_region){
@@ -126,11 +83,6 @@ export default {
 					center: coordinates,
 					zoom:zoom_region
 				});
-  	
-  			
-  	
-
-  		
   	},
 
   	addRegionData(mapa){
@@ -283,8 +235,10 @@ export default {
 <style lang="scss" scoped>
 
 .basemap {
-	width: 790px;
-	height: 620px;
+	border: 1px solid red;
+	width: 100%;
+	height: 68vh;
+	margin: auto 0;
 }
 </style>
 

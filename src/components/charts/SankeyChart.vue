@@ -1,13 +1,12 @@
 <template>
-    <v-row>
+  <div id="container-graph">
     <v-col
       id="svg-sankey"
       ref="sankeyContainer"
-      class="d-flex mx-auto align-items-center justify-content-center"
     ></v-col>
     <!-- Tooltip -->
     <div id="tooltip" class="tooltip" ref="tooltip" style="opacity: 0;"></div>
-  </v-row>
+    </div>
   </template>
   
   <script>
@@ -82,15 +81,19 @@
         .nodeId(d => d.id)
         .nodeWidth(20)
         .nodePadding(10)
-        .extent([[1, 1], [1100 - 1, 640 - 5]]);
-  
+        .extent([[1, 1], [window.innerWidth - 1, window.innerHeight * 0.7 - 5]]); // Usar dimensiones del viewport
+        // .extent([[1, 1], [1100 - 1, 640 - 5]]);
       const { nodes, links } = sankeyGenerator(data);
   
+      const container = this.$refs.sankeyContainer;
+      const width = container.getBoundingClientRect().width;
+      const height = container.getBoundingClientRect().height;
+    
+      
       const svg = d3.select(this.$refs.sankeyContainer)
         .append('svg')
-        .attr('width', 1200)
-        .attr('height', 700);
-
+        .attr('width', window.innerWidth)
+        .attr('height', window.innerHeight * 0.7);
 
       const tooltip = d3.select(this.$refs.tooltip);
     // Dibujar los nodos con color asignado
@@ -127,7 +130,7 @@
         .attr('text-anchor', 'end')
         .text(d => d.title)
         .attr('font-family', 'Quicksand, sans-serif')
-        .attr('font-size', '12px')
+        .attr('font-size', '.8vw')
         .attr('fill', '#000');
   
       // Dibujar los enlaces
@@ -152,12 +155,17 @@
         .on('mouseout', () => tooltip.style('opacity', 0));
     },
   };
+
+  
   </script>
   
   <style scoped>
-  #svg-sankey {
-  width: 100%;
-}
+  #container-graph {
+    border: 1px solid red;
+    /* overflow: hidden; */
+    height: 75vh;
+    width: 100%;
+  }
 
 .tooltip {
   position: absolute;
