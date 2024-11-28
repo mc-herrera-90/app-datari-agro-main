@@ -2,10 +2,11 @@
 	<div id="chart">
     <apexchart
       type="treemap"
-      :height="height"
+      :height="'100%'"
       ref="chart"
       :options="chartOptions"
       :series="series"
+      style="margin-top: -20px;"
       class="chart-wrapper"
     >
     </apexchart>
@@ -119,8 +120,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-div.chart-wrapper {
-  padding: 0 !important;
-  margin: 0 !important;
-}
 </style>

@@ -41,107 +41,97 @@
                 <v-spacer />
             </v-app-bar>
         </div>
-        <div class="body-detalles-view mt-4">
-            <v-row>
-                <v-col cols="6" class="ma-0 pa-0">
-                <div class="d-flex">
-                    <v-card class="text-center">
-                        <p class="gray-font-title1">
-                            Ubicación
-                        </p>
-                        <p class="blue_number mt-10">
+        <div id="body-wrapper" class="mt-2">
+                <div id="body-wrapper-left">
+                    <div id="left-panel-1">
+                    <v-card class="text-center" id="ubicacion">
+                            <h4 class="gray-font">
+                                Ubicación
+                            </h4>
+                            <p class="blue-color">
                                 {{ generalData.productor.ubicacion_predio }}
-                        </p>
+                            </p>
                     </v-card>
-                    <v-card>
-                        <h3 class="ml-4 gray-font-title1">Productos</h3>
+                    <v-card id="productos">
+                        <h4 class="gray-font">Productos</h4>
                                 <TreeMap
-                                style="margin-top: -32px; margin-left: 4px; margin-right: 4px;"
                                 :data="maptreeData"
                                 />
-                            </v-card>
-                        </div>
-                    <!-- Hasta acá la primera fila -->
-                    <v-card style="width: 100%">
-                        <div class="d-flex">
-                            <!-- Sección de Total Trabajadores -->
-                            <div id="capital-humano-wrapper">
-                                <h4 class="gray-font-title1">Capital Humano</h4>
-                                <p class="gray-font-subtitle">Total Trabajadores</p>
-                                <div class="gray-font-text">(cantidad)</div>
-                                <p class="blue_number">{{generalData.trabajadores.total  }}</p>
-                            </div>
-                            <!-- Sección de Formación -->
-                            <div id="formacion-wrapper">
-                                <h4 class="gray-font-subtitle">Formación</h4>
+                    </v-card>
+                    </div>
+                    <div id="left-panel-2">
+                        <v-card>
+                            <div class="d-flex">
+                                <div id="capital-humano-wrapper">
+                                    <h4 class="gray-font">Capital Humano</h4>
+                                    <p class="gray-font">Total Trabajadores</p>
+                                    <div class="gray-font">(cantidad)</div>
+                                    <p class="blue-color">{{generalData.trabajadores.total  }}</p>
+                                </div>
+                                <div id="formacion-wrapper">
+                                    <h4 class="gray-font">Formación</h4>
+                                        <div class="chips-container">
+                                                <div class="chips-container-inner">
+                                                <span
+                                                    :class="generalData.trabajadores.postgrado > 0 ? 'pill-blue' : 'pill-gray'"
+                                                    label
+                                                >Postgrado</span>
+                                                <span
+                                                    :class="generalData.trabajadores.postgrado > 0 ? 'blue-color' : 'gray-color'"
+                                                >{{ generalData.trabajadores.postgrado }}</span>
+                                                </div>
+                                                <div class="chips-container-inner">
+                                                <span
+                                                    :class="generalData.trabajadores.pregrado > 0 ? 'pill-blue' : 'pill-gray'"
+                                                    label
+                                                >Pregrado</span>
+                                                <span
+                                                    :class="generalData.trabajadores.pregrado > 0 ? 'blue-color' : 'gray-color'"
+                                                >{{ generalData.trabajadores.pregrado }}</span>
+                                                </div>
+                                                <div class="chips-container-inner">
+                                                <span
+                                                    :class="generalData.trabajadores.media > 0 ? 'pill-blue' : 'pill-gray'"
+                                                    label
+                                                >E. Media</span>
+                                                <span
+                                                    :class="generalData.trabajadores.media > 0 ? 'blue-color' : 'gray-color'"
+                                                >{{ generalData.trabajadores.media }}</span>
+                                                </div>
+                                                <div class="chips-container-inner">
+                                                <span
+                                                    :class="generalData.trabajadores.basica > 0 ? 'pill-blue' : 'pill-gray'"
+                                                    label
+                                                >E. Básica</span>
+                                                <span
+                                                    :class="generalData.trabajadores.basica > 0 ? 'blue-color' : 'gray-color'"
+                                                >{{ generalData.trabajadores.basica }}</span>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div id="capacitacion-wrapper">
+                                    <span class="gray-font-subtitle">Capacitación</span>
                                     <div class="chips-container">
-                                            <div class="chips-container-inner">
-                                            <span
-                                                :class="generalData.trabajadores.postgrado > 0 ? 'blue-chip' : 'gray-chip'"
-                                                label
-                                            >Postgrado</span>
-                                            <span
-                                                :class="generalData.trabajadores.postgrado > 0 ? 'blue-font-text' : 'gray-font-text'"
-                                            >{{ generalData.trabajadores.postgrado }}</span>
-                                            </div>
-
-                                            <div class="chips-container-inner">
-                                            <span
-                                                :class="generalData.trabajadores.pregrado > 0 ? 'blue-chip' : 'gray-chip'"
-                                                label
-                                            >Pregrado</span>
-                                            <span
-                                                :class="generalData.trabajadores.pregrado > 0 ? 'blue-font-text' : 'gray-font-text'"
-                                            >{{ generalData.trabajadores.pregrado }}</span>
-                                            </div>
-
-                                            <div class="chips-container-inner">
-                                            <span
-                                                :class="generalData.trabajadores.media > 0 ? 'blue-chip' : 'gray-chip'"
-                                                label
-                                            >E. Media</span>
-                                            <span
-                                                :class="generalData.trabajadores.media > 0 ? 'blue-font-text' : 'gray-font-text'"
-                                            >{{ generalData.trabajadores.media }}</span>
-                                            </div>
-
-                                            <div class="chips-container-inner">
-                                            <span
-                                                :class="generalData.trabajadores.basica > 0 ? 'blue-chip' : 'gray-chip'"
-                                                label
-                                            >E. Básica</span>
-                                            <span
-                                                :class="generalData.trabajadores.basica > 0 ? 'blue-font-text' : 'gray-font-text'"
-                                            >{{ generalData.trabajadores.basica }}</span>
-                                            </div>
+                                        <span class="gray-font-text">(Frecuencia cap. BPA)</span>
+                                        <span
+                                        :class="generalData.trabajadores.frecuencia_capacitacion[0].frecuencia_capacitacion_bpa ? 'blue-chip' : 'gray-chip'"
+                                        label
+                                        >
+                                        {{ generalData.trabajadores.frecuencia_capacitacion[0].frecuencia_capacitacion_bpa || 'N/A' }}
+                                        </span>
+                                        
+                                        <span class="gray-font-text">(Frecuencia cap. Seguridad)</span>
+                                        <span
+                                        :class="generalData.trabajadores.frecuencia_capacitacion_seguridad[0].frecuencia_capacitacion_seguridad ? 'blue-chip' : 'gray-chip'"
+                                        label
+                                        >
+                                        {{ generalData.trabajadores.frecuencia_capacitacion_seguridad[0].frecuencia_capacitacion_seguridad || 'N/A' }}
+                                        </span>
                                     </div>
-                            </div>
-                            <!-- Sección de Capacitación -->
-                            <div id="capacitacion-wrapper">
-                                <span class="gray-font-subtitle">Capacitación</span>
-                                <div class="chips-container">
-                                    <span class="gray-font-text">(Frecuencia cap. BPA)</span>
-                                    <span
-                                    :class="generalData.trabajadores.frecuencia_capacitacion[0].frecuencia_capacitacion_bpa ? 'blue-chip' : 'gray-chip'"
-                                    label
-                                    >
-                                    {{ generalData.trabajadores.frecuencia_capacitacion[0].frecuencia_capacitacion_bpa || 'N/A' }}
-                                    </span>
-                                    
-                                    <span class="gray-font-text">(Frecuencia cap. Seguridad)</span>
-                                    <span
-                                    :class="generalData.trabajadores.frecuencia_capacitacion_seguridad[0].frecuencia_capacitacion_seguridad ? 'blue-chip' : 'gray-chip'"
-                                    label
-                                    >
-                                    {{ generalData.trabajadores.frecuencia_capacitacion_seguridad[0].frecuencia_capacitacion_seguridad || 'N/A' }}
-                                    </span>
                                 </div>
                             </div>
-                        </div>
-                    </v-card>
-                    <!-- Hasta acá la segunda fila -->
-                    <v-row class="ma-0 pa-0">
-                        <v-col cols=8 class="pa-1">
+                        </v-card>
+                    </div>
                             <v-card height="338">
                                 <p class="gray-font-title1 ml-6">Comercialización</p>
                                 <PieChart
@@ -151,21 +141,13 @@
                                 :key="selectedProducer"
                                 />
                             </v-card>
-                        </v-col>
-                        <v-col cols=4 class="pa-0">
-                            <v-row class="ma-0 pa-0">
-                                <v-col class="pa-1">
+
                                     <v-card class="pa-0 text-center" height="155">
                                         <p class="gray-font-subtitle ma-0 pa-0">Producción</p>
                                         <p class="gray-font-text-ligth ma-0 pa-0">(todos los productos)</p>
                                         <p class="gray-font-text ma-0 pa-0">Total anual (TON)</p>
                                         <p class="blue_number mb-0">{{ generalData.cultivos.total_produccion_anual.replace(".",",") }}</p>
                                     </v-card>
-                                </v-col>
-                            </v-row>
-                            <!--  -->
-                            <v-row class="ma-0 pa-0">
-                                <v-col class="pa-1 text-center">
                                     <v-card class="pa-0" height="175">
                                     <p class="gray-font-subtitle text-center ma-0 pa-0">Evolución producción</p>
                                     <p class="gray-font-text-ligth text-center ma-0 pa-0">(Últimos 5 años)</p>
@@ -175,16 +157,8 @@
                                         <span :class="generalData.cultivos.evolucion_produccion === 1 ? 'blue-chip' : 'gray-chip'" label>Disminución</span>
                                     </div>
                                 </v-card>
-                                </v-col>
-                                
-                            </v-row>
-                        </v-col>
-                    </v-row>
-                </v-col>
-                <!-- <Hasta acá la columna de la izquierda -->
-                <v-col cols="6">
-                    <v-row>
-                        <v-col cols="8" class="pa-1 ma-0">
+                </div>
+                <div id="body-wrapper-right">
                             <v-card height="400">
                             <v-card-text>
                                 <p class="gray-font-title1 ma-0">Rating</p>
@@ -205,9 +179,6 @@
                                 </div>
                             </v-card-text>
                         </v-card>
-
-                        </v-col>
-                        <v-col cols="4" class="pa-1">
                             <v-card height="400" class="text-center d-flex flex-column align-start">
                                 <p class="gray-font-title1 ml-4 mt-1">Percepción</p>
                                 <p class="gray-font-subtitle ml-4 ma-0  ">Prácticas Agrícolas</p>
@@ -216,21 +187,12 @@
                                 :data_chart="chartSeries"
                                 />
                             </v-card>
-                        </v-col>
-                    </v-row>
-                    <!-- Hasta acá la segunda fila de la derecha -->
-                    <v-row>
-                        <v-col cols="8" class="pa-1 ma-0">
                             <v-card height="165">
                                 <p class="gray-font-title1 ma-0 ml-3">Gestión de Residuos</p>
-                                <v-row>
                                     <!-- Gestión de Residuos Orgánicos -->
-                                    <v-col cols="3" class="ma-0">
                                     <p class="gray-font-text ml-4">
                                         Realiza Gestión Residuos Orgánicos
                                     </p>
-                                    </v-col>
-                                    <v-col cols="3" class="text-center">
                                     <div class="chips-container">
                                         <span
                                         :class="generalData.residuos.gestion_organicos === 3 ? 'green-chip-r' : 'gray-chip-r'"
@@ -248,15 +210,10 @@
                                         Nunca
                                         </span>
                                     </div>
-                                    </v-col>
-
                                     <!-- Gestión de Residuos No Orgánicos -->
-                                    <v-col cols="3">
                                     <p class="gray-font-text ml-3">
                                         Realiza Gestión Residuos No Orgánicos
                                     </p>
-                                    </v-col>
-                                    <v-col cols="3" class="text-center">
                                     <div class="chips-container">
                                         <span
                                         :class="generalData.residuos.gestion_no_organicos === 3 ? 'green-chip-r' : 'gray-chip-r'"
@@ -274,24 +231,12 @@
                                         Nunca
                                         </span>
                                     </div>
-                                    </v-col>
-                                </v-row>
                                 </v-card>
-
-                        </v-col>
-                        <v-col cols="4" class="pa-1">
                             <v-card height="165" class="text-center">
                                 <p class="gray-font-subtitle ma-0">Consumo agua</p>
                                 <p class="gray-font-text">Total anual(M3)</p>
                                 <p class="blue_number">{{ generalData.cultivos.consumo_anual_agua.replace(".",",") }}</p>
                             </v-card>
-                        </v-col>
-                    </v-row>
-                    <!-- Hasta aca la tercera fila de la derecha -->
-                    <v-row>
-                        <v-col cols="8" class="pa-0 ma-0">
-                            <v-row class="ma-0 pa-0">
-                                <v-col cols=4 class="pa-1">
                                     <v-card height="165" class="text-center">
                                     <p class="gray-font-subtitle">Certificaciones</p>
                                     <div class="square-container">
@@ -311,10 +256,6 @@
                                         </span>
                                     </div>
                                 </v-card>
-
-
-                                </v-col>
-                                <v-col cols=4 class="pa-1">
                                     <v-card height="165" class="text-center">
                                     <p class="gray-font-subtitle">
                                         Trazabilidad
@@ -334,9 +275,6 @@
                                         </span>
                                     </div>
                                 </v-card>
-
-                                </v-col>
-                                <v-col cols=4 class="pa-1">
                                     <v-card height="165" class="text-center">
                                     <span class="gray-font-subtitle">Registro</span>
                                     <div class="chips-container">
@@ -357,11 +295,6 @@
                                         </span>
                                     </div>
                                     </v-card>
-                                </v-col>
-                            </v-row>
-                            
-                        </v-col>
-                        <v-col cols="4" class="pa-1">
                             <v-card height="165" class="text-center">
                             <p class="gray-font-subtitle mb-5">Frecuencia registro</p>
                             <div class="circle-container">
@@ -404,11 +337,8 @@
                                     : 'Siempre'
                                 }}
                             </p>
-                            </v-card>
-                        </v-col>
-                    </v-row>
-                </v-col>
-            </v-row>
+                </v-card>
+            </div>
         </div>
     </div>
 </template>
@@ -577,223 +507,129 @@ export default {
 #DetallesView {
     height: 100%;
     overflow: hidden;
-    border: 1px solid red;
 }
 
-
-
-#capacitacion-wrapper {
-    width: 100%; 
-    border: 1px solid red;
-}
-#formacion-wrapper {
+#body-wrapper {
     width: 100%;
-    border: 1px solid red;
+    display: flex;
+    gap: 5px;
+    height: 100%;
+    width: 100%;
 }
 
-#capital-humano-wrapper {
+/* left side */
+#body-wrapper-left {
+    height: 100%;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
-    text-align: center;
-}
-
-.gray-font-title1 {
-    padding: 0;
-    margin: 0;
-    color: #7F7F7F;
-    font-size: 1.5vw;
-    text-align: center;
-    font-weight: Bold;
-}
-.gray-font-subtitle{
-    padding: 0;
-    margin: 0;
-    color: #7F7F7F;
-    font-size: 1.2vw;
-    font-weight: bold;
-}
-.gray-font-text {
-    padding: 0;
-    margin: 0;
-    color: #7F7F7F;
-    font-size: 18px;
-    font-weight: normal;
-}
-.gray-font-text-ligth{
-    font-size: 14px;
-    color: #7F7F7F;
-    font-weight: normal;
-    margin-left:10px ;
-}
-
-.blue_number {
-  font-size: 32px; /* Tamaño de fuente más grande */
-  color: #2f48a3;  /* Color azul */
-  font-weight: bold;
-}
-
-.gray-font-text-italic {
-    padding: 0;
-    margin: 0;
-    color: #7F7F7F;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: normal;
-}
-.gray-chip{
-    margin: 2px;
-    height: 34px;
-    width: 120px;
-    background-color: #B6B7B7; /* Gris */
-    color: #ffffff;
-    font-weight: normal;
-    border-radius: 20px;
-    padding: 8px 15px;
-    font-size: 14px;
-}
-
-.blue-chip {
-    margin: 2px;
-    height: 36px;
-    width: 120px;
-    background-color: #2f48a3; /* Azul */
-    color: #ffffff;
-    font-weight: normal;
-    border-radius: 20px;
-    padding: 8px 15px;
-    font-size: 14px;
-}
-.gray-chip-r {
-    height: 34px;
-    width: 100px;
-    background-color: #B6B7B7; /* Gris */
-    color: #ffffff;
-    font-weight: normal;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 14px;
-    margin: 3px;
-}
-
-p {
-    margin: 0;
-    padding: 0;
-}
-.chips-container{
+    gap: 5px;
+    #left-panel-1 {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-}
-.chips-container-inner{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.green-chip-r {
-    margin: 2px;
-    height: 34px;
-    width: 100px;
-    background-color: #60B239; /* Azul */
-    color: #ffffff;
-    font-weight: normal;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 14px;
-}
-.blue-font-text {
-    color: #2f48a3; /* Azul */
-    font-weight: bold;
-    padding: 2px;
-    font-size: 20px;
+    border: 1px solid red;
+    height: auto;
+    gap: 5px;
+    #ubicacion,
+    #productos {
+        width: 100%;
+    }
+    #ubicacion {
+        display: flex;
+        flex-direction: column;
+        /* border: 10px solid green; */
+        padding: 5px;
+        height: auto;
+        p, h4 {
+            font-weight: bold;
+            font-size: 1.7vw;
+        }
+        p {
+            margin: auto 0;
+        }
+    }
+    #productos {
+        display: flex;
+        flex-direction: column;
+        /* border: 10px solid pink; */
+        padding: 5px;
+        height: auto;
+        h4 {
+            font-size: 1.7vw;
+        }
+        }
+    }
+    #left-panel-2 {
+        border: 3px solid black;
+
+        #capital-humano-wrapper {
+            width: 100%;
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            h4 {
+                font-size: 1.6vw;
+            }
+            p {
+                font-size: 1.2vw;
+                font-weight: bold;
+            }
+            div {
+                font-size: 1vw;
+            }
+        }
+
+        #formacion-wrapper {
+            width: 100%;
+            border: 1px solid red;
+            text-align: center;
+            h4 {
+                font-size: 1.2vw;
+            }
+            .chips-container {
+                border: 1px solid red;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+        }
+            #capacitacion-wrapper {
+            width: 100%;
+
+        }
+
+   } 
 }
 
 
-/*  */
-.circle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Espacio entre los círculos */
+/* right side */
+
+
+
+#body-wrapper-right {
+    width:100%;
 }
 
-.rounded-gray,
-.rounded-green {
-    width: 40px; /* Ancho del círculo */
-    height: 40px; /* Alto del círculo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 17px;
-    font-weight: normal;
-    border-radius: 50%; /* Hace que el elemento sea circular */
+.gray-font {
+    color: #7F7F7F;
+}
+.gray-color {
+    color: #c1c2bc;
 }
 
-.rounded-gray {
-    background-color: #B6B7B7;
-    color: #ffffff;
+.pill-blue, .pill-gray {
+    padding: 5px 10px;
+    border-radius: 1rem;
+    color: #fff;
 }
+.pill-blue {
+    background: #3550b8;
 
-.rounded-green {
-    background-color: #60B239;
-    color: #ffffff;
 }
-/*  */
-.square-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Espacio entre los cuadrados */
-}
-
-.square-gray,
-.square-green {
-    width: 50px; /* Ancho del cuadrado */
-    height: 50px; /* Alto del cuadrado */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: normal;
-    border-radius: 0px; /* Borde ligeramente redondeado */
-}
-
-.square-gray {
-    background-color: #B6B7B7;
-    color: #ffffff;
-}
-
-.square-green {
-    background-color: #60B239;
-    color: #ffffff;
-}
-.big-gray-chip-r,
-.big-green-chip-r {
-    width: 150px; /* Ancho más grande */
-    padding: 5px 0; /* Ajusta el padding vertical para mayor altura */
-    display: flex;
-    margin: 3px;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: normal;
-    border-radius: 30px; /* Bordes redondeados */
-}
-
-.big-gray-chip-r {
-    background-color: #B6B7B7;
-    color: #ffffff;
-}
-
-.big-green-chip-r {
-    background-color: #60B239;
-    color: #ffffff;
+.pill-gray {
+    background: #c1c2bc;
 }
 
 </style>
