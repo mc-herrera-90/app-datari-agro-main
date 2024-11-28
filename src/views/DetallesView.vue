@@ -61,8 +61,8 @@
                                 />
                     </v-card>
                     </div>
-                    <div style="margin: 3px 0">
-                        <v-card>
+                    <div style="height: 100%; margin-bottom: 3px">
+                        <v-card style="height: 100%">
                             <div class="d-flex">
                                 <div id="capital-humano-wrapper" class="text-center" style="width: 100%; height: 100%; padding: 5px">
                                     <h4 class="gray-font text-h5"><b>Capital Humano</b></h4>
@@ -73,7 +73,7 @@
                                 <div id="formacion-wrapper" class="text-center d-flex flex-column" style="width: 100%; justify-content: center; align-items: center;">
                                     <h4 class="gray-font text-h6"><b>Formación</b></h4>
                                         <div class="d-flex flex-column" style="gap: 5px">
-                                            <div class="d-flex" style="align-items: center; gap: 3px">
+                                            <div class="d-flex" style="align-items: center; gap: 5px">
                                                 <span
                                                     style="width: 100px"
                                                     :class="generalData.trabajadores.postgrado > 0 ? 'pill-blue' : 'pill-gray'"
