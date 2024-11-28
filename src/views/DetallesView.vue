@@ -71,7 +71,7 @@
                                 <div id="formacion-wrapper">
                                     <h4 class="gray-font">Formación</h4>
                                         <div class="chips-container">
-                                                <div class="chips-container-inner">
+                                            <div>
                                                 <span
                                                     :class="generalData.trabajadores.postgrado > 0 ? 'pill-blue' : 'pill-gray'"
                                                     label
@@ -79,8 +79,8 @@
                                                 <span
                                                     :class="generalData.trabajadores.postgrado > 0 ? 'blue-color' : 'gray-color'"
                                                 >{{ generalData.trabajadores.postgrado }}</span>
-                                                </div>
-                                                <div class="chips-container-inner">
+                                            </div>
+                                            <div>
                                                 <span
                                                     :class="generalData.trabajadores.pregrado > 0 ? 'pill-blue' : 'pill-gray'"
                                                     label
@@ -89,7 +89,7 @@
                                                     :class="generalData.trabajadores.pregrado > 0 ? 'blue-color' : 'gray-color'"
                                                 >{{ generalData.trabajadores.pregrado }}</span>
                                                 </div>
-                                                <div class="chips-container-inner">
+                                                <div>
                                                 <span
                                                     :class="generalData.trabajadores.media > 0 ? 'pill-blue' : 'pill-gray'"
                                                     label
@@ -98,7 +98,7 @@
                                                     :class="generalData.trabajadores.media > 0 ? 'blue-color' : 'gray-color'"
                                                 >{{ generalData.trabajadores.media }}</span>
                                                 </div>
-                                                <div class="chips-container-inner">
+                                                <div>
                                                 <span
                                                     :class="generalData.trabajadores.basica > 0 ? 'pill-blue' : 'pill-gray'"
                                                     label
@@ -564,7 +564,6 @@ export default {
 
         #capital-humano-wrapper {
             width: 100%;
-            border: 1px solid red;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -582,22 +581,31 @@ export default {
 
         #formacion-wrapper {
             width: 100%;
-            border: 1px solid red;
             text-align: center;
             h4 {
                 font-size: 1.2vw;
             }
             .chips-container {
-                border: 1px solid red;
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
+                padding: 5px 10%;
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span:nth-child(1) {
+                        width: 60%;
+                        display: block;
+                        margin-right: 4px;
+                    }
+                }
             }
 
         }
             #capacitacion-wrapper {
             width: 100%;
-
+            border: 1px solid red;
         }
 
    } 
