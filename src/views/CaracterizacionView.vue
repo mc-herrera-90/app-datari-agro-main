@@ -342,6 +342,7 @@ export default {
   display: flex;
   align-items: stretch;
   gap: 3px;
+  height: 100%;
 }
 
 #wrapper-left {
@@ -383,13 +384,14 @@ export default {
   gap: 5px;
 }
 #middle-panel {
-  height: auto;
+  height: 100%;
 }
 
 #bottom-panel {
   display: flex;
   height: auto;
   width: 100%;
+  height: 100%;
   gap: 5px;
 }
 
