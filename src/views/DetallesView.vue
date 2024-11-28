@@ -43,17 +43,17 @@
         </div>
         <div id="body-wrapper" class="mt-2">
                 <div id="body-wrapper-left">
-                    <div id="left-panel-1">
-                    <v-card class="ubicacion text-center" style="width: 30%">
-                            <h4 class="gray-font">
-                                Ubicación
+                    <div id="left-panel-1" class="d-flex" style="gap: 5px">
+                    <v-card class="text-center d-flex flex-column py-2" id="ubicacion" style="width: 33%">
+                            <h4 class="gray-font text-h5">
+                                <b>Ubicación</b>
                             </h4>
-                            <p class="blue-color" style="color:#3550b8">
+                            <p class="blue-color text-h4" style="color:#3550b8;margin: auto 0">
                                 {{ generalData.productor.ubicacion_predio }}
                             </p>
                     </v-card>
-                    <v-card class="productos">
-                        <h4 class="gray-font">Productos</h4>
+                    <v-card id="productos" class="py-2 px-2" style="width: 100%">
+                        <h4 class="gray-font text-h5"><b>Productos</b></h4>
                                 <TreeMap
                                 :data="maptreeData"
                                 />
@@ -62,17 +62,18 @@
                     <div id="left-panel-2">
                         <v-card>
                             <div class="d-flex">
-                                <div id="capital-humano-wrapper">
-                                    <h4 class="gray-font">Capital Humano</h4>
-                                    <p class="gray-font">Total Trabajadores</p>
+                                <div id="capital-humano-wrapper" class="text-center" style="width: 100%; padding: 5px">
+                                    <h4 class="gray-font text-h5"><b>Capital Humano</b></h4>
+                                    <p class="gray-font"><b>Total Trabajadores</b></p>
                                     <div class="gray-font">(cantidad)</div>
                                     <p class="blue-color">{{generalData.trabajadores.total  }}</p>
                                 </div>
-                                <div id="formacion-wrapper">
-                                    <h4 class="gray-font">Formación</h4>
-                                        <div class="chips-container">
-                                            <div>
+                                <div id="formacion-wrapper" class="text-center d-flex flex-column" style="width: 100%; justify-content: center; align-items: center;">
+                                    <h4 class="gray-font text-h6"><b>Formación</b></h4>
+                                        <div class="d-flex flex-column" style="gap: 5px">
+                                            <div class="d-flex" style="align-items: center; gap: 3px">
                                                 <span
+                                                    style="width: 100px"
                                                     :class="generalData.trabajadores.postgrado > 0 ? 'pill-blue' : 'pill-gray'"
                                                     label
                                                 >Postgrado</span>
@@ -80,8 +81,9 @@
                                                     :class="generalData.trabajadores.postgrado > 0 ? 'blue-color' : 'gray-color'"
                                                 >{{ generalData.trabajadores.postgrado }}</span>
                                             </div>
-                                            <div>
+                                            <div class="d-flex" style="align-items: center; gap: 3px">
                                                 <span
+                                                    style="width: 100px"
                                                     :class="generalData.trabajadores.pregrado > 0 ? 'pill-blue' : 'pill-gray'"
                                                     label
                                                 >Pregrado</span>
@@ -89,8 +91,9 @@
                                                     :class="generalData.trabajadores.pregrado > 0 ? 'blue-color' : 'gray-color'"
                                                 >{{ generalData.trabajadores.pregrado }}</span>
                                                 </div>
-                                                <div>
+                                                <div class="d-flex" style="align-items: center; gap: 3px">
                                                 <span
+                                                    style="width: 100px"
                                                     :class="generalData.trabajadores.media > 0 ? 'pill-blue' : 'pill-gray'"
                                                     label
                                                 >E. Media</span>
@@ -98,8 +101,9 @@
                                                     :class="generalData.trabajadores.media > 0 ? 'blue-color' : 'gray-color'"
                                                 >{{ generalData.trabajadores.media }}</span>
                                                 </div>
-                                                <div>
+                                                <div class="mb-1 d-flex" style="align-items: center; gap: 3px">
                                                 <span
+                                                    style="width: 100px"
                                                     :class="generalData.trabajadores.basica > 0 ? 'pill-blue' : 'pill-gray'"
                                                     label
                                                 >E. Básica</span>
@@ -109,11 +113,12 @@
                                                 </div>
                                         </div>
                                 </div>
-                                <div id="capacitacion-wrapper">
-                                    <h4 class="gray-font">Capacitación</h4>
-                                    <div class="chips-container">
+                                <div id="capacitacion-wrapper" class="text-center" style="width: 100%;">
+                                    <h4 class="gray-font text-h6"><b>Capacitación</b></h4>
+                                    <div class="d-flex flex-column" style="align-items: center;">
                                         <span class="gray-font">(Frecuencia cap. BPA)</span>
                                         <span
+                                        style="width: 100px"
                                         :class="generalData.trabajadores.frecuencia_capacitacion[0].frecuencia_capacitacion_bpa ? 'pill-blue' : 'pill-gray'"
                                         label
                                         >
@@ -122,6 +127,7 @@
                                         
                                         <span class="gray-font">(Frecuencia cap. Seguridad)</span>
                                         <span
+                                        style="width: 100px"
                                         :class="generalData.trabajadores.frecuencia_capacitacion_seguridad[0].frecuencia_capacitacion_seguridad ? 'pill-blue' : 'pill-gray'"
                                         label
                                         >
@@ -497,7 +503,6 @@ export default {
 <style>
 #DetallesView {
     height: 100%;
-    overflow: hidden;
 }
 
 #body-wrapper {
@@ -515,73 +520,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    #left-panel-1 {
-        display: flex;
-        width: 100%;
-        height: auto;
-        gap: 5px;
 
-
-
-    }
-    #left-panel-2 {
-        #capital-humano-wrapper {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            h4 {
-                font-size: 1.6vw;
-            }
-            p {
-                font-size: 1.2vw;
-                font-weight: bold;
-                color: #3550b8;
-            }
-            div {
-                font-size: 1vw;
-            }
-        }
-
-        #formacion-wrapper {
-            width: 100%;
-            text-align: center;
-            h4 {
-                font-size: 1.2vw;
-            }
-            .chips-container {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                padding: 5px 10%;
-                div {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    span:nth-child(1) {
-                        width: 60%;
-                        display: block;
-                        margin-right: 4px;
-                    }
-                }
-            }
-
-        }
-        #capacitacion-wrapper {
-            width: 100%;
-            text-align: center;
-            h4 {
-                font-size: 1.2vw;
-            }
-            .chips-container {
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
-                padding: 0 2vw;
-            }
-        }
-
-   }
    #left-panel-3 {
         display: flex;
         width: 100%;
@@ -632,6 +571,7 @@ export default {
         }
    }
 }
+
 
 /* right side */
 
@@ -696,28 +636,6 @@ export default {
     }
 }
 
-.ubicacion {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    height: auto;
-}
-.ubicacion p,
-.ubicacion h4 {
-        font-weight: bold;
-        font-size: 1.7vw;
-}
-.ubicacion p {
-    margin: auto;
-}
-
-.productos {
-    width: 100%;
-}
-.productos h4 {
-        font-weight: bold;
-        font-size: 1.7vw;
-}
 .gray-font {
     color: #7F7F7F;
 }
