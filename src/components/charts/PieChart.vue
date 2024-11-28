@@ -1,6 +1,5 @@
 <template>
-	<div id="PieChart">
-    <v-card flat :height="height_card"> 
+    <v-card flat> 
       <v-card-title >
         <v-icon
           medium
@@ -8,14 +7,13 @@
           >
          {{icon}}
         </v-icon>
-        <span class="gray-font-text">{{data_chart.title}}</span>
+        <span class="gray-font">{{data_chart.title}}</span>
       </v-card-title>
       <v-card-text style="margin-top:-10px;">
-       <apexchart type="pie" :width="width" ref="chart" 
-        :height="height_chart" :options="chartOptions" :series="series" class="chart-wrapper"></apexchart>
+       <apexchart type="pie" :height="'100%'" ref="chart" 
+         :options="chartOptions" :series="series" class="chart-wrapper"></apexchart>
       </v-card-text>
     </v-card>
-	</div>
 </template>
 
 <script>
