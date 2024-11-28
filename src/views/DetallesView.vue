@@ -180,18 +180,17 @@
                         <div id="right-panel-2">
                             <v-card class="residuos">
                                 <h4 class="gray-font">Gestión de Residuos</h4>
-                                    <!-- Gestión de Residuos Orgánicos -->
                                     <p class="gray-font">
                                         Realiza Gestión Residuos Orgánicos
                                     </p>
                                     <div class="chips-container">
                                         <span
-                                        :class="generalData.residuos.gestion_organicos === 3 ? 'green-chip-r' : 'gray-chip-r'"
+                                        :class="generalData.residuos.gestion_organicos === 3 ? 'pill-green' : 'pill-gray'"
                                         >
                                         Siempre
                                         </span>
                                         <span
-                                        :class="generalData.residuos.gestion_organicos === 2 ? 'green-chip-r' : 'gray-chip-r'"
+                                        :class="generalData.residuos.gestion_organicos === 2 ? 'pill-green' : 'pill-gray'"
                                         >
                                         A veces
                                         </span>
@@ -223,8 +222,8 @@
                                         </span>
                                     </div>
                                 </v-card>
-                            <v-card class="consumo-agua">
-                                <p class="gray-font-subtitle ma-0">Consumo agua</p>
+                            <v-card class="consumo-agua text-center">
+                                <h4 class="gray-font">Consumo agua</h4>
                                 <p class="gray-font-text">Total anual(M3)</p>
                                 <p class="blue_number">{{ generalData.cultivos.consumo_anual_agua.replace(".",",") }}</p>
                             </v-card>
@@ -715,6 +714,9 @@ export default {
             width: 65%;
             height: auto;
             padding: 10px;
+            h4 {
+                font-size: 1.5vw;
+            }
         }
         .consumo-agua {
             width: 35%;
@@ -729,7 +731,7 @@ export default {
     color: #c1c2bc;
 }
 
-.pill-blue, .pill-gray {
+.pill-blue, .pill-gray, .pill-green{
     padding: 5px 10px;
     border-radius: 1rem;
     color: #fff;
@@ -740,6 +742,9 @@ export default {
 }
 .pill-gray {
     background: #c1c2bc;
+}
+.pill-green {
+    background: #52b120;
 }
 
 </style>
