@@ -149,7 +149,7 @@
                             <div id="img-rating">
                             </div>
                         </v-card>
-                            <v-card class="percepcion" style="padding: 3px;">
+                            <v-card class="percepcion" style="padding: 3px; width: 38%">
                                 <h4 class="gray-font text-h5"><b>Percepción</b></h4>
                                 <p class="gray-font"><b>Prácticas Agrícolas</b></p>
                                 <StackColumnVertical
@@ -179,7 +179,7 @@
                             <v-card class="text-center d-flex flex-column px-2 py-2"  id="evaluacion">
                             <h4 class="gray-font"><b>Evolución producción</b></h4>
                             <p class="gray-font">(Últimos 5 años)</p>
-                            <div class="d-flex flex-column" style="gap: 2px; width: 60%; margin: auto">
+                            <div class="d-flex flex-column" style="gap: 2px; width: 75%; margin: auto">
                                 <div
                                 :class="generalData.cultivos.evolucion_produccion === 3 ? 'pill-blue' : 'pill-gray'" label>Aumento</div>
                                 <div :class="generalData.cultivos.evolucion_produccion === 2 ? 'pill-blue' : 'pill-gray'" label>Igual</div>
@@ -207,7 +207,7 @@
                                             Orgánicos
                                         </div>
                                     </div>
-                                    <div class="d-flex flex-column" style="gap: 3px">
+                                    <div class="d-flex flex-column text-center" style="gap: 3px">
                                         <span
                                         :class="generalData.residuos.gestion_organicos === 3 ? 'pill-green' : 'pill-gray'"
                                         >
@@ -238,7 +238,7 @@
                                             Orgánicos
                                         </div>
                                     </div>
-                                    <div class="d-flex flex-column" style="gap: 3px">
+                                    <div class="d-flex flex-column text-center" style="gap: 3px">
                                         <span
                                         :class="generalData.residuos.gestion_no_organicos === 3 ? 'pill-green' : 'pill-gray'"
                                         >
