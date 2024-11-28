@@ -66,7 +66,7 @@
                                     <h4 class="gray-font text-h5"><b>Capital Humano</b></h4>
                                     <p class="gray-font"><b>Total Trabajadores</b></p>
                                     <div class="gray-font">(cantidad)</div>
-                                    <p class="blue-color">{{generalData.trabajadores.total  }}</p>
+                                    <p class="blue-color text-h4" style="color: #3550b8"><b>{{generalData.trabajadores.total  }}</b></p>
                                 </div>
                                 <div id="formacion-wrapper" class="text-center d-flex flex-column" style="width: 100%; justify-content: center; align-items: center;">
                                     <h4 class="gray-font text-h6"><b>Formación</b></h4>
@@ -138,25 +138,25 @@
                             </div>
                         </v-card>
                     </div>
-                    <div id="left-panel-3">
-                            <v-card style="width: 70%" id="comercializacion">
-                                <h4 class="gray-font">Comercialización</h4>
+                    <div id="left-panel-3" class="d-flex" style="width: 100%; gap: 5px;">
+                            <v-card style="width: 75%; padding: 10px;" id="comercializacion">
+                                <h4 class="gray-font text-h6"><b>Comercialización</b></h4>
                                 <PieChart
                                 :data_chart="PieChartData"
                                 :key="selectedProducer"
                                 />
                             </v-card>
-                            <div id="left-panel-3-right">
-                            <v-card style="height:400%" id="produccion">
-                                <h4 class="gray-font">Producción</h4>
-                                <p class="gray-font">(todos los productos)</p>
+                            <div id="left-panel-3-right" clas="d-flex flex-column" style="gap: 5px;">
+                            <v-card id="produccion" class="text-center d-flex flex-column" style="border: 1px solid red">
+                                <h4 class="gray-font text-h6"><b>Producción</b></h4>
+                                <p class="gray-font" style="line-height: normal">(todos los productos)</p>
                                 <p class="gray-font">Total anual (TON)</p>
-                                <p class="blue-color" style="color: #3550b8">{{ generalData.cultivos.total_produccion_anual.replace(".",",") }}</p>
+                                <p class="blue-color text-h5" style="color: #3550b8; line-height: normal;"><b>{{ generalData.cultivos.total_produccion_anual.replace(".",",") }}</b></p>
                             </v-card>
-                            <v-card class="text-center" style="height: 100%; padding: 5px" id="evaluacion">
-                            <h4 class="gray-font">Evolución producción</h4>
+                            <v-card class="text-center d-flex flex-column px-2 py-2"  id="evaluacion">
+                            <h4 class="gray-font"><b>Evolución producción</b></h4>
                             <p class="gray-font">(Últimos 5 años)</p>
-                            <div class="chips-container">
+                            <div class="d-flex flex-column" style="gap: 5px">
                                 <span :class="generalData.cultivos.evolucion_produccion === 3 ? 'pill-blue' : 'pill-gray'" label>Aumento</span>
                                 <span :class="generalData.cultivos.evolucion_produccion === 2 ? 'pill-blue' : 'pill-gray'" label>Igual</span>
                                 <span :class="generalData.cultivos.evolucion_produccion === 1 ? 'pill-blue' : 'pill-gray'" label>Disminución</span>
@@ -166,10 +166,10 @@
                     </div>
                 </div>
                 <div id="body-wrapper-right">
-                        <div id="right-panel-1">
-                        <v-card class="raiting">
-                                <h4 class="gray-font">Rating</h4>
-                                <p class="gray-font">Productores</p>
+                        <div id="right-panel-1" class="d-flex" style="width: 100%; gap: 4px">
+                        <v-card class="raiting py-1 px-1" style="width: 65%;">
+                                <h4 class="gray-font text-h5"><b>Rating</b></h4>
+                                <p class="gray-font"><b>Productores</b></p>
                                 <p class="gray-font">Buenas Prácticas Sostenibilidad Agrícola (BPSA)</p>
                             <div id="img-rating">
                             </div>
@@ -183,13 +183,25 @@
                                 />
                             </v-card>
                         </div>
-                        <div id="right-panel-2">
-                            <v-card class="residuos">
-                                <h4 class="gray-font">Gestión de Residuos</h4>
-                                    <p class="gray-font">
-                                        Realiza Gestión Residuos Orgánicos
-                                    </p>
-                                    <div class="chips-container">
+                        <div id="right-panel-2" class="d-flex" style="gap: 5px">
+                            <v-card class="residuos px-1 py-1" style="width: 65%">
+                                <h4 class="gray-font text-h5"><b>Gestión de Residuos</b></h4>
+                                <div class="d-flex" style="width: 100%; justify-content: space-around">
+                                    <div class="d-flex flex-column" style="gap: 2px">
+                                        <div class="gray-font">
+                                            Realiza
+                                        </div>
+                                        <div class="gray-font">
+                                            Gestión
+                                        </div>
+                                        <div class="gray-font">
+                                            Residuos
+                                        </div>
+                                        <div class="gray-font">
+                                            Orgánicos
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column" style="gap: 3px">
                                         <span
                                         :class="generalData.residuos.gestion_organicos === 3 ? 'pill-green' : 'pill-gray'"
                                         >
@@ -201,100 +213,114 @@
                                         A veces
                                         </span>
                                         <span
-                                        :class="generalData.residuos.gestion_organicos === 1 ? 'green-chip-r' : 'gray-chip-r'"
+                                        :class="generalData.residuos.gestion_organicos === 1 ? 'pill-green' : 'pill-gray'"
                                         >
                                         Nunca
                                         </span>
                                     </div>
-                                    <!-- Gestión de Residuos No Orgánicos -->
-                                    <p class="gray-font-text ml-3">
-                                        Realiza Gestión Residuos No Orgánicos
-                                    </p>
-                                    <div class="chips-container">
+                                                     <div class="d-flex flex-column">
+                                        <div class="gray-font">
+                                            Realiza
+                                        </div>
+                                        <div class="gray-font">
+                                            Gestión
+                                        </div>
+                                        <div class="gray-font">
+                                            Residuos
+                                        </div>
+                                        <div class="gray-font">
+                                            Orgánicos
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column" style="gap: 3px">
                                         <span
-                                        :class="generalData.residuos.gestion_no_organicos === 3 ? 'green-chip-r' : 'gray-chip-r'"
+                                        :class="generalData.residuos.gestion_no_organicos === 3 ? 'pill-green' : 'pill-gray'"
                                         >
                                         Siempre
                                         </span>
                                         <span
-                                        :class="generalData.residuos.gestion_no_organicos === 2 ? 'green-chip-r' : 'gray-chip-r'"
+                                        :class="generalData.residuos.gestion_no_organicos === 2 ? 'pill-green' : 'pill-gray'"
                                         >
                                         A veces
                                         </span>
                                         <span
-                                        :class="generalData.residuos.gestion_no_organicos === 1 ? 'green-chip-r' : 'gray-chip-r'"
+                                        :class="generalData.residuos.gestion_no_organicos === 1 ? 'pill-green' : 'pill-gray'"
                                         >
                                         Nunca
                                         </span>
                                     </div>
+                                    </div>
+             
                                 </v-card>
-                            <v-card class="consumo-agua text-center">
-                                <h4 class="gray-font">Consumo agua</h4>
+                            <v-card class="text-center py-1" style="width: 40%;">
+                                <h4 class="gray-font text-h6"><b>Consumo agua</b></h4>
                                 <p class="gray-font-text">Total anual(M3)</p>
-                                <p class="blue_number">{{ generalData.cultivos.consumo_anual_agua.replace(".",",") }}</p>
+                                <p class="blue-color text-h4" style="color: #3550b8"><b>{{ generalData.cultivos.consumo_anual_agua.replace(".",",") }}</b></p>
                             </v-card>
                         </div>
-                            <v-card>
-                                <p class="gray-font-subtitle">Certificaciones</p>
-                                <div class="square-container">
-                                    <!-- Botón para "Sí" -->
+                        <div id="right-panel-3" class="d-flex" style="gap: 5px">
+                            <v-card style="width: 33%; align-items: center" class="d-flex flex-column">
+                                <h4 class="gray-font text-h6"><b>Certificaciones</b></h4>
+                                <div class="d-flex mt-3" style="gap: 5px">
                                     <span
-                                        class="square-gray "
+                                        style="background: #52b120; padding: 10px; color: #fff"
                                         :class="{ 'square-green': generalData.certificaciones[0] !== 'No tiene' }"
                                     >
                                         Sí
                                     </span>
                                     <!-- Botón para "No" -->
                                     <span
-                                        class="square-gray"
+                                        style="background: #c1c2bc; padding: 10px; color: #fff"
                                         :class="{ 'square-green': generalData.certificaciones[0] === 'No tiene' }"
                                     >
                                         No
                                     </span>
                                 </div>
-                            </v-card>
-                                    <v-card>
-                                    <p class="gray-font-subtitle">
-                                        Trazabilidad
-                                    </p>
-                                    <div class="square-container">
-                                        <span
-                                            class="square-gray"
-                                            :class="{ 'square-green': generalData.trazabilidad.realiza_trazabilidad === 'Si' }"
-                                        >
-                                            Sí
-                                        </span>
-                                        <span
-                                            class="square-gray"
-                                            :class="{ 'square-green': generalData.trazabilidad.realiza_trazabilidad === 'No' }"
-                                        >
-                                            No
-                                        </span>
-                                    </div>
                                 </v-card>
-                                    <v-card height="165" class="text-center">
-                                    <span class="gray-font-subtitle">Registro</span>
-                                    <div class="chips-container">
+                                    <v-card style="width: 33%" class="text-center">
+                                    <h4 class="gray-font text-h6"><b>Trazabilidad</b></h4>
+                                    <div class="d-flex mt-3" style="gap: 5px; justify-content: center">
+                                    <span
+                                        style="background: #52b120; padding: 10px; color: #fff"
+                                        :class="{ 'square-green': generalData.certificaciones[0] !== 'No tiene' }"
+                                    >
+                                        Sí
+                                    </span>
+                                    <!-- Botón para "No" -->
+                                    <span
+                                        style="background: #c1c2bc; padding: 10px; color: #fff"
+                                        :class="{ 'square-green': generalData.certificaciones[0] === 'No tiene' }"
+                                    >
+                                        No
+                                    </span>
+                                </div>
+                                </v-card>
+                                    <v-card style="width: 33%" class="text-center px-2 pb-2">
+                                    <h4 class="gray-font text-h6"><b>Registro</b></h4>
+                                    <div class="d-flex flex-column" style="gap: 3px">
                                         <span
-                                        :class="generalData.trazabilidad.forma_registro === 3 ? 'big-green-chip-r' : 'big-gray-chip-r'"
+                                        style="font-size: .8vw"
+                                        :class="generalData.trazabilidad.forma_registro === 3 ? 'pill-green' : 'pill-gray'"
                                         >
                                         Cuaderno C. Digital
                                         </span>
                                         <span
-                                        :class="generalData.trazabilidad.forma_registro === 2 ? 'big-green-chip-r' : 'big-gray-chip-r'"
+                                        style="font-size: .8vw"
+                                        :class="generalData.trazabilidad.forma_registro === 2 ? 'pill-green' : 'pill-gray'"
                                         >
                                         Cuaderno C. Impreso
                                         </span>
                                         <span
-                                        :class="generalData.trazabilidad.forma_registro === 1 ? 'big-green-chip-r' : 'big-gray-chip-r'"
+                                        style="font-size: .8vw"
+                                        :class="generalData.trazabilidad.forma_registro === 1 ? 'pill-green' : 'pill-gray'"
                                         >
                                         No realiza
                                         </span>
                                     </div>
                                     </v-card>
-                            <v-card height="165" class="text-center">
-                            <p class="gray-font-subtitle mb-5">Frecuencia registro</p>
-                            <div class="circle-container">
+                            <v-card style="width: 33%;align-items: space-evenly" class="text-center py-1 d-flex flex-column">
+                            <h4 class="gray-font mb-3"><b>Frecuencia registro</b></h4>
+                            <div class="d-flex" style="justify-content: space-evenly">
                                 <span
                                 :class="generalData.trazabilidad.frecuencia_registro === 1 ? 'rounded-green' : 'rounded-gray'"
                                 >
@@ -335,6 +361,7 @@
                                 }}
                             </p>
                 </v-card>
+            </div>
             </div>
         </div>
     </div>
@@ -521,55 +548,6 @@ export default {
     flex-direction: column;
     gap: 5px;
 
-   #left-panel-3 {
-        display: flex;
-        width: 100%;
-        gap: 5px;
-        #comercializacion {
-            width: 100%;
-            height: 100%;
-            padding: 10px;
-            h4 {
-                font-size: 1.7vw;
-            }
-        }
-        #left-panel-3-right {
-            width: 40%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-
-            #produccion {
-                text-align: center;
-                display: flex;
-                gap: 0;
-                flex-direction: column;
-                p {
-                    margin: 0;
-                }
-                h4 {
-                    font-size: 1.2vw;
-                }
-                p:nth-child(1) {
-                    font-size: 1.6vw;
-                    font-weight: bold;
-                }
-
-            }
-            #evaluacion {
-                h4 {
-                    font-size: 1.2vw;
-                }
-                .chips-container {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 6px;
-                    padding: 0 2vw;
-                }
-            }
-        }
-   }
 }
 
 
@@ -580,62 +558,17 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    border: 10px solid red;
-    #right-panel-1 {
-        display: flex;
-        gap: 5px;
-        .raiting {
-            width: 65%;
-            height: auto;
-            padding: 10px;
-            h4 {
-                font-size: 1.5vw;
-            }
-            :nth-child(2) {
-                font-size: 1vw;
-                font-weight: bold;
-                margin: 0;
-            }
-            :nth-child(3) {
-                padding: 0;
-                margin: 0;
-            }
-            #img-rating {
-                background: url('../media/raiting_E-adjust.png');
-                background-size: 100% 100%;
-                background-position: center center;
-                background-repeat: no-repeat;
-                height: 72%;
-            }
-        }
-        .percepcion {
-            width: 35%;
-            padding: 10px;
-            height: auto;
-            h4 {
-                font-size: 1.5vw;
-            }
-        }
-    }
-
-    #right-panel-2 {
-        display: flex;
-        width: 100%;
-        gap: 5px;
-        .residuos {
-            width: 65%;
-            height: auto;
-            padding: 10px;
-            h4 {
-                font-size: 1.5vw;
-            }
-        }
-        .consumo-agua {
-            width: 35%;
-        }
-    }
+    /* border: 3px solid red; */
+    height: 100%;
 }
 
+#img-rating {
+    background: url('../media/raiting_E-adjust.png');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 72%;
+}
 .gray-font {
     color: #7F7F7F;
 }
@@ -652,11 +585,20 @@ export default {
     background: #3550b8;
 
 }
-.pill-gray {
+.pill-gray, .rounded-gray {
     background: #c1c2bc;
+    color: #fff;
 }
-.pill-green {
+.pill-green,.rounded-green {
     background: #52b120;
+    color: #fff;
 }
+.rounded-green, .rounded-gray {
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+
+}
+
 
 </style>
