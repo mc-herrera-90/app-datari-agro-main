@@ -146,8 +146,19 @@
                                 <h4 class="gray-font text-h5"><b>Rating</b></h4>
                                 <p class="gray-font"><b>Productores</b></p>
                                 <p class="gray-font">Buenas Prácticas Sostenibilidad Agrícola (BPSA)</p>
-                            <div id="img-rating">
-                            </div>
+                                <div style="width: 100%; height: 100%; overflow: hidden;">
+                                    <v-img
+                                    :src="generalData.productor && generalData.productor.ranking_bpsa
+                                        ? require(`../media/rating_${generalData.productor.ranking_bpsa}.svg`)
+                                        : require('../media/rating_F.svg')"
+                                    alt="Ranking BPSA"
+                                    max-width="500"
+                                    max-height="300"
+                                    style="transform: scale(1.8); object-fit: contain;"
+                                    contain
+                                    ></v-img>
+
+                                </div>
                         </v-card>
                             <v-card class="percepcion" style="padding: 3px; width: 38%">
                                 <h4 class="gray-font text-h5"><b>Percepción</b></h4>
