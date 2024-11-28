@@ -41,10 +41,12 @@
                 <v-spacer />
             </v-app-bar>
         </div>
-        <div id="body-wrapper" class="mt-2">
-                <div id="body-wrapper-left">
-                    <div id="left-panel-1" class="d-flex" style="gap: 5px">
-                    <v-card class="text-center d-flex flex-column py-2" id="ubicacion" style="width: 33%">
+        <div class="mt-2">
+                    <!-- Primera mitad -->
+                    <div class="d-flex" style="gap: 5px; width: 100%;">
+                    <div class="d-flex flex-column" style="width: 100%; gap: 3px">
+                        <div class="d-flex" style="width: 100%; gap: 3px;">
+                            <v-card class="text-center d-flex flex-column py-2" id="ubicacion" style="width: 30%">
                             <h4 class="gray-font text-h5">
                                 <b>Ubicación</b>
                             </h4>
@@ -52,17 +54,17 @@
                                 <b>{{ generalData.productor.ubicacion_predio }}</b>
                             </p>
                     </v-card>
-                    <v-card id="productos" class="py-2 px-2" style="width: 100%">
+                    <v-card id="productos" class="py-2 px-2" style="width: 100%; height: 100%;">
                         <h4 class="gray-font text-h5"><b>Productos</b></h4>
                                 <TreeMap
                                 :data="maptreeData"
                                 />
                     </v-card>
                     </div>
-                    <div id="left-panel-2">
+                    <div style="margin: 3px 0">
                         <v-card>
                             <div class="d-flex">
-                                <div id="capital-humano-wrapper" class="text-center" style="width: 100%; padding: 5px">
+                                <div id="capital-humano-wrapper" class="text-center" style="width: 100%; height: 100%; padding: 5px">
                                     <h4 class="gray-font text-h5"><b>Capital Humano</b></h4>
                                     <p class="gray-font"><b>Total Trabajadores</b></p>
                                     <div class="gray-font">(cantidad)</div>
@@ -138,7 +140,28 @@
                             </div>
                         </v-card>
                     </div>
-                    <div id="left-panel-3" class="d-flex" style="width: 100%; gap: 5px;">
+                    </div>
+                       <div id="right-panel-1" class="d-flex mb-1" style="width: 100%; gap: 4px">
+                        <v-card class="raiting py-1 px-1" style="width: 65%;">
+                                <h4 class="gray-font text-h5"><b>Rating</b></h4>
+                                <p class="gray-font"><b>Productores</b></p>
+                                <p class="gray-font">Buenas Prácticas Sostenibilidad Agrícola (BPSA)</p>
+                            <div id="img-rating">
+                            </div>
+                        </v-card>
+                            <v-card class="percepcion" style="padding: 3px;">
+                                <h4 class="gray-font text-h5"><b>Percepción</b></h4>
+                                <p class="gray-font"><b>Prácticas Agrícolas</b></p>
+                                <StackColumnVertical
+                                :height_chart="290"
+                                :data_chart="chartSeries"
+                                />
+                            </v-card>
+                        </div>
+                        </div>
+                    <!-- Segunda mitad -->
+                    <div class="d-flex" style="width: 100%; gap: 5px;">
+                        <div class="d-flex" style="width: 50%; gap: 5px">
                             <v-card style="width: 75%; padding: 10px;" id="comercializacion">
                                 <h4 class="gray-font text-h6"><b>Comercialización</b></h4>
                                 <PieChart
@@ -146,14 +169,14 @@
                                 :key="selectedProducer"
                                 />
                             </v-card>
-                            <div clas="d-flex flex-column" style="width: 35%;gap: 15px;border: 1px solid red">
-                            <v-card id="produccion" class="text-center d-flex flex-column" style="border: 1px solid red">
+                            <div clas="d-flex flex-column" style="width: 35%;">
+                            <v-card id="produccion" class="text-center d-flex flex-column mb-1">
                                 <h4 class="gray-font"><b>Producción</b></h4>
                                 <p class="gray-font" style="line-height: normal">(todos los productos)</p>
                                 <p class="gray-font">Total anual (TON)</p>
                                 <p class="blue-color text-h5" style="color: #3550b8; line-height: normal;"><b>{{ generalData.cultivos.total_produccion_anual.replace(".",",") }}</b></p>
                             </v-card>
-                            <v-card class="text-center d-flex flex-column px-2 py-2"  id="evaluacion" style="height: auto;border: 1px solid red">
+                            <v-card class="text-center d-flex flex-column px-2 py-2"  id="evaluacion">
                             <h4 class="gray-font"><b>Evolución producción</b></h4>
                             <p class="gray-font">(Últimos 5 años)</p>
                             <div class="d-flex flex-column" style="gap: 2px; width: 60%; margin: auto">
@@ -164,27 +187,9 @@
                             </div>
                         </v-card>
                         </div>
-                    </div>
-                </div>
-                <div id="body-wrapper-right">
-                        <div id="right-panel-1" class="d-flex" style="width: 100%; gap: 4px">
-                        <v-card class="raiting py-1 px-1" style="width: 65%;">
-                                <h4 class="gray-font text-h5"><b>Rating</b></h4>
-                                <p class="gray-font"><b>Productores</b></p>
-                                <p class="gray-font">Buenas Prácticas Sostenibilidad Agrícola (BPSA)</p>
-                            <div id="img-rating">
-                            </div>
-                        </v-card>
-                            <v-card class="percepcion">
-                                <h4 class="gray-font">Percepción</h4>
-                                <p class="gray-font"><b>Prácticas Agrícolas</b></p>
-                                <StackColumnVertical
-                                :height_chart="290"
-                                :data_chart="chartSeries"
-                                />
-                            </v-card>
                         </div>
-                        <div id="right-panel-2" class="d-flex" style="gap: 5px">
+                        <div class="d-flex flex-column" style="width: 50%; gap: 5px; justify-content: space-between;">
+                        <div id="right-panel-2" class="d-flex" style="gap: 5px;height: 100%;">
                             <v-card class="residuos px-1 py-1" style="width: 65%">
                                 <h4 class="gray-font text-h5"><b>Gestión de Residuos</b></h4>
                                 <div class="d-flex" style="width: 100%; justify-content: space-around">
@@ -259,7 +264,7 @@
                                 <p class="blue-color text-h4" style="color: #3550b8"><b>{{ generalData.cultivos.consumo_anual_agua.replace(".",",") }}</b></p>
                             </v-card>
                         </div>
-                        <div id="right-panel-3" class="d-flex" style="gap: 5px">
+                        <div id="right-panel-3" class="d-flex" style="gap: 5px; height: 100%">
                             <v-card style="width: 33%; align-items: center" class="d-flex flex-column">
                                 <h4 class="gray-font text-h6"><b>Certificaciones</b></h4>
                                 <div class="d-flex mt-3" style="gap: 5px">
@@ -364,6 +369,7 @@
                 </v-card>
             </div>
             </div>
+                    </div>
         </div>
     </div>
 </template>
@@ -533,35 +539,6 @@ export default {
     height: 100%;
 }
 
-#body-wrapper {
-    width: 100%;
-    display: flex;
-    gap: 5px;
-    height: 100%;
-    width: 100%;
-}
-
-/* left side */
-#body-wrapper-left {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-}
-
-
-/* right side */
-
-#body-wrapper-right {
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    /* border: 3px solid red; */
-    height: 100%;
-}
 
 #img-rating {
     background: url('../media/raiting_E-adjust.png');
