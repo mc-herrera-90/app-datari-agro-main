@@ -48,8 +48,8 @@
                             <h4 class="gray-font text-h5">
                                 <b>Ubicación</b>
                             </h4>
-                            <p class="blue-color text-h4" style="color:#3550b8;margin: auto 0">
-                                {{ generalData.productor.ubicacion_predio }}
+                            <p class="blue-color" style="color:#3550b8; font-size: 1.6vw;margin: auto 0">
+                                <b>{{ generalData.productor.ubicacion_predio }}</b>
                             </p>
                     </v-card>
                     <v-card id="productos" class="py-2 px-2" style="width: 100%">
@@ -146,20 +146,21 @@
                                 :key="selectedProducer"
                                 />
                             </v-card>
-                            <div id="left-panel-3-right" clas="d-flex flex-column" style="gap: 5px;">
+                            <div clas="d-flex flex-column" style="width: 35%;gap: 15px;border: 1px solid red">
                             <v-card id="produccion" class="text-center d-flex flex-column" style="border: 1px solid red">
-                                <h4 class="gray-font text-h6"><b>Producción</b></h4>
+                                <h4 class="gray-font"><b>Producción</b></h4>
                                 <p class="gray-font" style="line-height: normal">(todos los productos)</p>
                                 <p class="gray-font">Total anual (TON)</p>
                                 <p class="blue-color text-h5" style="color: #3550b8; line-height: normal;"><b>{{ generalData.cultivos.total_produccion_anual.replace(".",",") }}</b></p>
                             </v-card>
-                            <v-card class="text-center d-flex flex-column px-2 py-2"  id="evaluacion">
+                            <v-card class="text-center d-flex flex-column px-2 py-2"  id="evaluacion" style="height: auto;border: 1px solid red">
                             <h4 class="gray-font"><b>Evolución producción</b></h4>
                             <p class="gray-font">(Últimos 5 años)</p>
-                            <div class="d-flex flex-column" style="gap: 5px">
-                                <span :class="generalData.cultivos.evolucion_produccion === 3 ? 'pill-blue' : 'pill-gray'" label>Aumento</span>
-                                <span :class="generalData.cultivos.evolucion_produccion === 2 ? 'pill-blue' : 'pill-gray'" label>Igual</span>
-                                <span :class="generalData.cultivos.evolucion_produccion === 1 ? 'pill-blue' : 'pill-gray'" label>Disminución</span>
+                            <div class="d-flex flex-column" style="gap: 2px; width: 60%; margin: auto">
+                                <div
+                                :class="generalData.cultivos.evolucion_produccion === 3 ? 'pill-blue' : 'pill-gray'" label>Aumento</div>
+                                <div :class="generalData.cultivos.evolucion_produccion === 2 ? 'pill-blue' : 'pill-gray'" label>Igual</div>
+                                <div :class="generalData.cultivos.evolucion_produccion === 1 ? 'pill-blue' : 'pill-gray'" label>Disminución</div>
                             </div>
                         </v-card>
                         </div>
