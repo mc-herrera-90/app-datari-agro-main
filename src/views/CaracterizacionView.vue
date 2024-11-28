@@ -36,26 +36,26 @@
     <div id="wrapper" class="mt-2">
         <div id="wrapper-left">
           <div class="d-flex" id="top-panel">
-              <v-card class="d-flex flex-column" style="justify-content: space-around; align-items: center; width: 100%">
+              <v-card id="top-panel-1">
                 <h4 class="gray-font">Productores Participantes</h4>
                 <DonutChart 
                 :data_chart="{ serie: chartSeries, categories: chartOptions.labels, colors: ['#103E8E', '#5390EA'] }" 
                 />
               </v-card>
-              <v-card class="d-flex flex-column text-center" style="justify-content: space-between; width: 40%;">
+              <v-card class="d-flex flex-column text-center" id="top-panel-2">
                 <h4 class="gray-font">Tipo Empresa</h4>
                 <p class="gray-font">Persona Jurídica</p>
                 <p class="number">1</p>
                 <p class="gray-font">Persona Natural</p>
                 <p class="number">6</p>
               </v-card>
-            <div class="d-flex flex-column" style="gap: 5px; width: 100%">
-                  <v-card class="text-center">
+            <div id="top-panel-3">
+                  <v-card class="text-center" style="height: 100%">
                     <h4 class="gray-font">Microempresas</h4>
                     <p class="gray-font-subtitle">0 - 2400 UF</p>
                     <p class="number">100%</p>
                   </v-card>
-                  <v-card class="text-center">
+                  <v-card class="text-center" style="height: 100%">
                     <h4 class="gray-font">Propiedad</h4>
                     <StackColumn
                       :data_chart="data_chart"
@@ -362,6 +362,26 @@ export default {
   height: auto;
 }
 
+#top-panel-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+#top-panel-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 15%;
+}
+
+#top-panel-3 {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  gap: 5px;
+}
 #middle-panel {
   height: auto;
 }

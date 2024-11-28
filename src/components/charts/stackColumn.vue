@@ -148,7 +148,6 @@
 		margin: 0;
 		padding: 0;
 		background-color: #fff;
-		height: 90%;
   }
   </style>
   
