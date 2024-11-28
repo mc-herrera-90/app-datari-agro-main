@@ -44,7 +44,7 @@
         <div id="body-wrapper" class="mt-2">
                 <div id="body-wrapper-left">
                     <div id="left-panel-1">
-                    <v-card class="text-center" id="ubicacion">
+                    <v-card class="ubicacion text-center" style="width: 30%">
                             <h4 class="gray-font">
                                 Ubicación
                             </h4>
@@ -52,7 +52,7 @@
                                 {{ generalData.productor.ubicacion_predio }}
                             </p>
                     </v-card>
-                    <v-card id="productos">
+                    <v-card class="productos">
                         <h4 class="gray-font">Productos</h4>
                                 <TreeMap
                                 :data="maptreeData"
@@ -516,40 +516,13 @@ export default {
     flex-direction: column;
     gap: 5px;
     #left-panel-1 {
-    display: flex;
-    width: 100%;
-    height: auto;
-    gap: 5px;
-    #ubicacion {
-        width: 33%;
-    }
-    #productos {
+        display: flex;
         width: 100%;
-    }
-    #ubicacion {
-        display: flex;
-        flex-direction: column;
-        /* border: 10px solid green; */
-        padding: 5px;
         height: auto;
-        p, h4 {
-            font-weight: bold;
-            font-size: 1.7vw;
-        }
-        p {
-            margin: auto 0;
-        }
-    }
-    #productos {
-        display: flex;
-        flex-direction: column;
-        /* border: 10px solid pink; */
-        padding: 5px;
-        height: auto;
-        h4 {
-            font-size: 1.7vw;
-        }
-        }
+        gap: 5px;
+
+
+
     }
     #left-panel-2 {
         #capital-humano-wrapper {
@@ -660,7 +633,6 @@ export default {
    }
 }
 
-
 /* right side */
 
 #body-wrapper-right {
@@ -724,6 +696,28 @@ export default {
     }
 }
 
+.ubicacion {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    height: auto;
+}
+.ubicacion p,
+.ubicacion h4 {
+        font-weight: bold;
+        font-size: 1.7vw;
+}
+.ubicacion p {
+    margin: auto;
+}
+
+.productos {
+    width: 100%;
+}
+.productos h4 {
+        font-weight: bold;
+        font-size: 1.7vw;
+}
 .gray-font {
     color: #7F7F7F;
 }
