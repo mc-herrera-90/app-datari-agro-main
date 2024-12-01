@@ -61,9 +61,7 @@
                                 />
                     </v-card>
                     </div>
-                    <div style="height: 100%; margin-bottom: 3px">
-                        <v-card style="height: 100%">
-                            <div class="d-flex">
+                        <v-card class="d-flex align-start justify-betweem" style="margin-bottom: 3px;height: 100%; width: 100%; border: 1px solid red">
                                 <div id="capital-humano-wrapper" class="text-center" style="width: 100%; height: 100%; padding: 5px">
                                     <h4 class="gray-font text-h5"><b>Capital Humano</b></h4>
                                     <p class="gray-font"><b>Total Trabajadores</b></p>
@@ -137,27 +135,21 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
                         </v-card>
                     </div>
-                    </div>
                        <div id="right-panel-1" class="d-flex mb-1" style="width: 100%; gap: 4px">
-                        <v-card class="raiting py-1 px-1" style="width: 65%;">
+                        <v-card class="d-flex flex-column justify-center px-1 py-1" style="width: 65%;">
                                 <h4 class="gray-font text-h5"><b>Rating</b></h4>
                                 <p class="gray-font"><b>Productores</b></p>
                                 <p class="gray-font">Buenas Prácticas Sostenibilidad Agrícola (BPSA)</p>
-                                <div style="width: 100%; height: 100%; overflow: hidden;">
-                                    <v-img
+                                <div style="width: 100%; border: 1px solid red;">
+                                    <img
                                     :src="generalData.productor && generalData.productor.ranking_bpsa
-                                        ? require(`../media/rating_${generalData.productor.ranking_bpsa}.svg`)
-                                        : require('../media/rating_F.svg')"
+                                        ? require(`../media/rating/${generalData.productor.ranking_bpsa}.png`)
+                                        : require('../media/rating/F.png')"
                                     alt="Ranking BPSA"
-                                    max-width="500"
-                                    max-height="300"
-                                    style="transform: scale(1.8); object-fit: contain;"
-                                    contain
-                                    ></v-img>
-
+                                    height="250"
+                                    >
                                 </div>
                         </v-card>
                             <v-card class="percepcion" style="padding: 3px; width: 38%">
@@ -551,13 +543,7 @@ export default {
 }
 
 
-#img-rating {
-    background: url('../media/raiting_E-adjust.png');
-    background-size: 100% 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 72%;
-}
+
 .gray-font {
     color: #7F7F7F;
 }
