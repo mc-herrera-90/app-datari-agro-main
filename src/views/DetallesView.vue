@@ -270,17 +270,15 @@
                         <div id="right-panel-3" class="d-flex" style="gap: 5px; height: 100%">
                             <v-card style="width: 33%; align-items: center" class="d-flex flex-column">
                                 <h4 class="gray-font text-h6"><b>Certificaciones</b></h4>
-                                <div class="d-flex mt-3" style="gap: 5px">
+                                <div class="d-flex mt-3 align-center" style="gap: 5px">
                                     <span
-                                        style="background: #52b120; padding: 10px; color: #fff"
-                                        :class="{ 'square-green': generalData.certificaciones[0] !== 'No tiene' }"
+                                        :class="generalData.certificaciones[0] !== 'No tiene' ? 'square-green' : 'square-gray'"
                                     >
                                         Sí
                                     </span>
                                     <!-- Botón para "No" -->
                                     <span
-                                        style="background: #c1c2bc; padding: 10px; color: #fff"
-                                        :class="{ 'square-green': generalData.certificaciones[0] === 'No tiene' }"
+                                        :class="generalData.certificaciones[0] === 'No tiene' ? 'square-green' : 'square-gray'"
                                     >
                                         No
                                     </span>
@@ -290,15 +288,13 @@
                                     <h4 class="gray-font text-h6"><b>Trazabilidad</b></h4>
                                     <div class="d-flex mt-3" style="gap: 5px; justify-content: center">
                                     <span
-                                        style="background: #52b120; padding: 10px; color: #fff"
-                                        :class="{ 'square-green': generalData.certificaciones[0] !== 'No tiene' }"
+                                        :class="generalData.trazabilidad.realiza_trazabilidad === 'Si' ? 'square-green' : 'square-gray'"
                                     >
                                         Sí
                                     </span>
                                     <!-- Botón para "No" -->
                                     <span
-                                        style="background: #c1c2bc; padding: 10px; color: #fff"
-                                        :class="{ 'square-green': generalData.certificaciones[0] === 'No tiene' }"
+                                        :class="generalData.trazabilidad.realiza_trazabilidad === 'No' ? 'square-green' : 'square-gray'"
                                     >
                                         No
                                     </span>
@@ -538,6 +534,19 @@ export default {
 
 
 <style>
+
+.square-green {
+    background: #52b120; 
+    padding: 10px; 
+    color: #fff
+}
+
+.square-gray {
+    background: #c1c2bc; 
+    padding: 10px;
+    color: #fff;
+}
+
 #DetallesView {
     height: 100%;
 }
