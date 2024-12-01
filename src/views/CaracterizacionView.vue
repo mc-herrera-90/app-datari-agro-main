@@ -70,15 +70,14 @@
                 />
             </v-card>
             <div id="bottom-panel">
-                  <v-card style="width: 100%;">
-                    <InfoCardDoble
-                    class="pt-3"
+                  <v-card style="width: 100%; height: 100%;">
+                    <InfoCardDoble class="pt-3"
                     :title="'Producción Anual (TON)'"
                     :name1="'Total'"
                     :data1="'252,4'"
                     />
                   </v-card>
-                  <v-card style="width: 100%;">
+                  <v-card style="width: 100%; height: 100%">
                     <InfoCardDoble
                     class="pt-3"
                     :title="'Consumo agua Anual (M3)'"
@@ -86,7 +85,7 @@
                     :data1="'48.084'"
                     />
                   </v-card>
-                  <v-card style="width: 100%">
+                  <v-card class="pt-4" style="width: 100%; height: 100%">
                     <InfoCardTriple
                     :title="'Rango superficie cultivada (Ha)'"
                     :name1="'Menos de 1 Ha'"
@@ -389,7 +388,7 @@ export default {
 
 #bottom-panel {
   display: flex;
-  height: auto;
+  align-items: center;
   width: 100%;
   height: 100%;
   gap: 5px;

@@ -1,5 +1,5 @@
 module.exports = {
-  // publicPath: process.env.NODE_ENV === 'production' ? '/app-datari-agro-main/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/app-datari-agro-main/' : '/',
   transpileDependencies: [
     'vuetify'
   ]

@@ -1,5 +1,5 @@
 <template>
-	<div class="text-center">
+	<div class="text-center" id="wrapper-card">
       <p class="gray-font-title">{{title}}</p>
 			<p class=" number">Total: {{data1}} </p>
 	</div>
@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style scoped>
+#wrapper-card {
+  height: 100%;
+}
 .number{
   padding: 0;
   margin: 0;

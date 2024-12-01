@@ -61,7 +61,7 @@
                                 />
                     </v-card>
                     </div>
-                        <v-card class="d-flex align-start justify-betweem" style="margin-bottom: 3px;height: 100%; width: 100%; border: 1px solid red">
+                        <v-card class="d-flex align-start justify-betweem" style="margin-bottom: 3px;height: 100%; width: 100%;">
                                 <div id="capital-humano-wrapper" class="text-center" style="width: 100%; height: 100%; padding: 5px">
                                     <h4 class="gray-font text-h5"><b>Capital Humano</b></h4>
                                     <p class="gray-font"><b>Total Trabajadores</b></p>
@@ -142,7 +142,7 @@
                                 <h4 class="gray-font text-h5"><b>Rating</b></h4>
                                 <p class="gray-font"><b>Productores</b></p>
                                 <p class="gray-font">Buenas Prácticas Sostenibilidad Agrícola (BPSA)</p>
-                                <div style="width: 100%; border: 1px solid red;">
+                                <div style="width: 100%;">
                                     <img
                                     :src="generalData.productor && generalData.productor.ranking_bpsa
                                         ? require(`../media/rating/${generalData.productor.ranking_bpsa}.png`)
